@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "area";
+}
+
+@using(Html.BeginForm())
+{
+<fieldset>
+    <legend><h3> Choose your Order Type </h3></legend>
+    <div class="h4">
+        @Html.Label("Order Type :")
+    </div>
+    <div class="editor-field">
+        @Html.RadioButton("Pickup",true)
+    </div>
+</fieldset>
+}
+
