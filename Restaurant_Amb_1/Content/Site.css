@@ -23,6 +23,7 @@ body {font:500 14px 'Open Sans', Arial, Helvetica, sans-serif; color:#333;}
 .navigation li a:hover {color:#18bc71;}
 .navigation li a.active {border-bottom:5px solid #18bc71;}
 .navigation li.loginNav a {background:#e31836; color:#fff; border-radius:4px; border-bottom:none;}
+.dropdown-menu > li {display:block;}
 
 .banner {background:url(Images/bannerBg.jpg) no-repeat center center; background-size:cover; max-height:600px; height:600px; margin-top:0; text-align:center;}
 .banner h2 {margin-top:200px; color:#fff; font:bold 36px 'Open Sans', Arial, Helvetica, sans-serif; text-shadow:0px 0px 15px rgba(0,0,0,.75); margin-bottom:20px;}
