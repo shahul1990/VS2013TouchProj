@@ -181,6 +181,9 @@
     <Content Include="Content\Images\img1.jpg" />
     <Content Include="Content\Images\img2.jpg" />
     <Content Include="Content\Images\img3.jpg" />
+    <Content Include="Content\Images\img4.jpg" />
+    <Content Include="Content\Images\img5.jpg" />
+    <Content Include="Content\Images\img6.jpg" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\responsive.css" />
     <Content Include="Content\Site.css" />

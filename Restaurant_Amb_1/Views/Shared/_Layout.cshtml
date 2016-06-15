@@ -30,21 +30,21 @@
                         <div class="col-md-9 col-sm-9 col-xs-12 taR">
                             <nav id="navbar" class="navbar-collapse collapse" aria-expanded="false">
                                 <ul class="navigation">
-                                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                                    <li>@Html.ActionLink("About Us", "About", "Home")</li>
-                                    <li>@Html.ActionLink("Menu", "Index", "OrderPage")</li>
+                                    <li>@Html.ActionLink("Home", "Index", "Home", new { id = "menuHome" })</li>
+                                    <li>@Html.ActionLink("About Us", "About", "Home", new { id="menuAbout"})</li>
+                                    <li>@Html.ActionLink("Menu", "Index", "OrderPage", new { id = "menuMenu" })</li>
                                     
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Service<b class="caret"></b></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="menuService">Service<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li>@Html.ActionLink("Dinning/Buffet", "Index", "OrderPage")</li>
                                             <li>@Html.ActionLink("Party Hall", "Index", "OrderPage")</li>
                                             <li>@Html.ActionLink("Catering", "Index", "OrderPage")</li>
                                         </ul>
                                     </li>
-                                    <li>@Html.ActionLink("Cart", "area", "OrderOnline")</li>
-                                    <li>@Html.ActionLink("Track your Order", "Index", "OrderPage")</li>
-                                    <li>@Html.ActionLink("Reach Us", "Index", "OrderPage")</li>
+                                    <li>@Html.ActionLink("Cart", "area", "OrderOnline", new { id = "menuCart" })</li>
+                                    <li>@Html.ActionLink("Track your Order", "Index", "OrderPage", new { id = "menuTrack" })</li>
+                                    <li>@Html.ActionLink("Reach Us", "Index", "OrderPage", new { id = "menuContact" })</li>
                                     <!--<li>@Html.Partial("_LoginPartial")</li>-->
                                 </ul>
                             </nav>
@@ -54,16 +54,7 @@
                 </div>
             </div>
         </div>
-        <div class="banner">
-            <div class="container">
-                <div class="row">
-                    <h2>Get Hot & Fresh Briyani</h2>
-                    @*<div class="bannerBg">
-                        <h6>Choose Your Order Type:</h6>
-                    </div>*@
-                </div>
-            </div>
-        </div>
+        @RenderSection("banner", required: false)
         <div class="bodyContent">
             <div class="container">
                 <div class="row">
