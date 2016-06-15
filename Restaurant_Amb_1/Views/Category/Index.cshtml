@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Restaurant_Amb_1.Category_Tbl>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.categoryname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.categorydesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.createdby)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.createddate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.updatedby)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.updateddate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.categoryname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.categorydesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.createdby)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.createddate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.updatedby)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.updateddate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.categoryid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.categoryid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.categoryid })
+        </td>
+    </tr>
+}
+
+</table>

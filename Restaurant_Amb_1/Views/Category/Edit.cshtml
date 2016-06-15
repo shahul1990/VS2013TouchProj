@@ -1,0 +1,82 @@
+﻿@model Restaurant_Amb_1.Category_Tbl
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Category_Tbl</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.categoryid)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.categoryname, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.categoryname)
+                @Html.ValidationMessageFor(model => model.categoryname)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.categorydesc, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.categorydesc)
+                @Html.ValidationMessageFor(model => model.categorydesc)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.createdby, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.createdby)
+                @Html.ValidationMessageFor(model => model.createdby)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.createddate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.createddate)
+                @Html.ValidationMessageFor(model => model.createddate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.updatedby, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.updatedby)
+                @Html.ValidationMessageFor(model => model.updatedby)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.updateddate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.updateddate)
+                @Html.ValidationMessageFor(model => model.updateddate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

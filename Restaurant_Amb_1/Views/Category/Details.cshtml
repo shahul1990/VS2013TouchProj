@@ -1,0 +1,66 @@
+﻿@model Restaurant_Amb_1.Category_Tbl
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Category_Tbl</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.categoryname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.categoryname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.categorydesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.categorydesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createdby)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createdby)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createddate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createddate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.updatedby)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.updatedby)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.updateddate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.updateddate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.categoryid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

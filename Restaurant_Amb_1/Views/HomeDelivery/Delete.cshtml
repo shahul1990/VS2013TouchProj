@@ -1,0 +1,72 @@
+﻿@model Restaurant_Amb_1.HomeDelivery_Tbl
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>HomeDelivery_Tbl</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.homdellocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.homdellocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.homdelcity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.homdelcity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createdby)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createdby)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createddate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createddate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.updatedby)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.updatedby)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.updateddate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.updateddate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

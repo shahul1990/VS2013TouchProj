@@ -1,0 +1,106 @@
+﻿@model Restaurant_Amb_1.Pickup_Tbl
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Pickup_Tbl</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.storeid)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.storelocation, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.storelocation)
+                @Html.ValidationMessageFor(model => model.storelocation)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.sotrecity, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.sotrecity)
+                @Html.ValidationMessageFor(model => model.sotrecity)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.storecontact1, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.storecontact1)
+                @Html.ValidationMessageFor(model => model.storecontact1)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.storecontact2, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.storecontact2)
+                @Html.ValidationMessageFor(model => model.storecontact2)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.storecontact3, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.storecontact3)
+                @Html.ValidationMessageFor(model => model.storecontact3)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.createdby, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.createdby)
+                @Html.ValidationMessageFor(model => model.createdby)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.createddate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.createddate)
+                @Html.ValidationMessageFor(model => model.createddate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.updatedby, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.updatedby)
+                @Html.ValidationMessageFor(model => model.updatedby)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.updateddate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.updateddate)
+                @Html.ValidationMessageFor(model => model.updateddate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

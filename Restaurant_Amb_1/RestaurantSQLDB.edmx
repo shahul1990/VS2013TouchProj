@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HotTouchRestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'HotTouchRest.dbo.Admin_Tbl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Admin_Tbl">
+          <Key>
+            <PropertyRef Name="username" />
+            <PropertyRef Name="password" />
+            <PropertyRef Name="confirmpassword" />
+          </Key>
+          <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="confirmpassword" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="contactno" Type="varbinary" MaxLength="13" />
+        </EntityType>
+        <EntityType Name="Category_Tbl">
+          <Key>
+            <PropertyRef Name="categoryid" />
+          </Key>
+          <Property Name="categoryid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="categoryname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="categorydesc" Type="varchar" MaxLength="150" />
+          <Property Name="createdby" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+          <Property Name="updatedby" Type="varchar" MaxLength="20" />
+          <Property Name="updateddate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Employee_Tbl">
+          <Key>
+            <PropertyRef Name="empid" />
+          </Key>
+          <Property Name="empid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="empname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="empusername" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="emppassword" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="empconfpassword" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="empcontactno" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="empmailid" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="empaddress" Type="varchar" MaxLength="150" />
+          <Property Name="dateofjoining" Type="date" />
+        </EntityType>
+        <EntityType Name="HomeDelivery_Tbl">
+          <Key>
+            <PropertyRef Name="homdelid" />
+          </Key>
+          <Property Name="homdelid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="homdellocation" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="homdelcity" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="createdby" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+          <Property Name="updatedby" Type="varchar" MaxLength="20" />
+          <Property Name="updateddate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Item_Tbl">
+          <Key>
+            <PropertyRef Name="itemid" />
+          </Key>
+          <Property Name="itemid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="iname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idesc" Type="nvarchar" MaxLength="200" />
+          <Property Name="itype" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="iimage" Type="image" />
+          <Property Name="iprice" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="icategory" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="createdby" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+          <Property Name="updatedby" Type="varchar" MaxLength="20" />
+          <Property Name="updateddate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Pickup_Tbl">
+          <Key>
+            <PropertyRef Name="storeid" />
+          </Key>
+          <Property Name="storeid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="storelocation" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="sotrecity" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="storecontact1" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="storecontact2" Type="varchar" MaxLength="13" />
+          <Property Name="storecontact3" Type="varchar" MaxLength="13" />
+          <Property Name="createdby" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="createddate" Type="datetime" Nullable="false" />
+          <Property Name="updatedby" Type="varchar" MaxLength="20" />
+          <Property Name="updateddate" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="HotTouchRestModelStoreContainer">
+          <EntitySet Name="Category_Tbl" EntityType="Self.Category_Tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee_Tbl" EntityType="Self.Employee_Tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HomeDelivery_Tbl" EntityType="Self.HomeDelivery_Tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Item_Tbl" EntityType="Self.Item_Tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pickup_Tbl" EntityType="Self.Pickup_Tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Admin_Tbl" EntityType="Self.Admin_Tbl" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Admin_Tbl].[username] AS [username], 
+    [Admin_Tbl].[password] AS [password], 
+    [Admin_Tbl].[confirmpassword] AS [confirmpassword], 
+    [Admin_Tbl].[email] AS [email], 
+    [Admin_Tbl].[contactno] AS [contactno]
+    FROM [dbo].[Admin_Tbl] AS [Admin_Tbl]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HotTouchRestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Category_Tbl">
+          <Key>
+            <PropertyRef Name="categoryid" />
+          </Key>
+          <Property Name="categoryid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="categoryname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="categorydesc" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="createdby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updatedby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="updateddate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Employee_Tbl">
+          <Key>
+            <PropertyRef Name="empid" />
+          </Key>
+          <Property Name="empid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="empname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="empusername" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="emppassword" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="empconfpassword" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="empcontactno" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="empmailid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="empaddress" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="dateofjoining" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="HomeDelivery_Tbl">
+          <Key>
+            <PropertyRef Name="homdelid" />
+          </Key>
+          <Property Name="homdelid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="homdellocation" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="homdelcity" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="createdby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updatedby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="updateddate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Item_Tbl">
+          <Key>
+            <PropertyRef Name="itemid" />
+          </Key>
+          <Property Name="itemid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="iname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idesc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="itype" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="iimage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="iprice" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="icategory" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="createdby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updatedby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="updateddate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Pickup_Tbl">
+          <Key>
+            <PropertyRef Name="storeid" />
+          </Key>
+          <Property Name="storeid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="storelocation" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sotrecity" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="storecontact1" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="storecontact2" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="storecontact3" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="createdby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updatedby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="updateddate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Admin_Tbl">
+          <Key>
+            <PropertyRef Name="username" />
+            <PropertyRef Name="password" />
+            <PropertyRef Name="confirmpassword" />
+          </Key>
+          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="confirmpassword" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="contactno" Type="Binary" MaxLength="13" FixedLength="false" />
+        </EntityType>
+        <EntityContainer Name="HotTouchRestEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Category_Tbl" EntityType="Self.Category_Tbl" />
+          <EntitySet Name="Employee_Tbl" EntityType="Self.Employee_Tbl" />
+          <EntitySet Name="HomeDelivery_Tbl" EntityType="Self.HomeDelivery_Tbl" />
+          <EntitySet Name="Item_Tbl" EntityType="Self.Item_Tbl" />
+          <EntitySet Name="Pickup_Tbl" EntityType="Self.Pickup_Tbl" />
+          <EntitySet Name="Admin_Tbl" EntityType="Self.Admin_Tbl" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HotTouchRestModelStoreContainer" CdmEntityContainer="HotTouchRestEntities">
+          <EntitySetMapping Name="Category_Tbl">
+            <EntityTypeMapping TypeName="HotTouchRestModel.Category_Tbl">
+              <MappingFragment StoreEntitySet="Category_Tbl">
+                <ScalarProperty Name="categoryid" ColumnName="categoryid" />
+                <ScalarProperty Name="categoryname" ColumnName="categoryname" />
+                <ScalarProperty Name="categorydesc" ColumnName="categorydesc" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+                <ScalarProperty Name="updatedby" ColumnName="updatedby" />
+                <ScalarProperty Name="updateddate" ColumnName="updateddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee_Tbl">
+            <EntityTypeMapping TypeName="HotTouchRestModel.Employee_Tbl">
+              <MappingFragment StoreEntitySet="Employee_Tbl">
+                <ScalarProperty Name="empid" ColumnName="empid" />
+                <ScalarProperty Name="empname" ColumnName="empname" />
+                <ScalarProperty Name="empusername" ColumnName="empusername" />
+                <ScalarProperty Name="emppassword" ColumnName="emppassword" />
+                <ScalarProperty Name="empconfpassword" ColumnName="empconfpassword" />
+                <ScalarProperty Name="empcontactno" ColumnName="empcontactno" />
+                <ScalarProperty Name="empmailid" ColumnName="empmailid" />
+                <ScalarProperty Name="empaddress" ColumnName="empaddress" />
+                <ScalarProperty Name="dateofjoining" ColumnName="dateofjoining" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HomeDelivery_Tbl">
+            <EntityTypeMapping TypeName="HotTouchRestModel.HomeDelivery_Tbl">
+              <MappingFragment StoreEntitySet="HomeDelivery_Tbl">
+                <ScalarProperty Name="homdelid" ColumnName="homdelid" />
+                <ScalarProperty Name="homdellocation" ColumnName="homdellocation" />
+                <ScalarProperty Name="homdelcity" ColumnName="homdelcity" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+                <ScalarProperty Name="updatedby" ColumnName="updatedby" />
+                <ScalarProperty Name="updateddate" ColumnName="updateddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Item_Tbl">
+            <EntityTypeMapping TypeName="HotTouchRestModel.Item_Tbl">
+              <MappingFragment StoreEntitySet="Item_Tbl">
+                <ScalarProperty Name="itemid" ColumnName="itemid" />
+                <ScalarProperty Name="iname" ColumnName="iname" />
+                <ScalarProperty Name="idesc" ColumnName="idesc" />
+                <ScalarProperty Name="itype" ColumnName="itype" />
+                <ScalarProperty Name="iimage" ColumnName="iimage" />
+                <ScalarProperty Name="iprice" ColumnName="iprice" />
+                <ScalarProperty Name="icategory" ColumnName="icategory" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+                <ScalarProperty Name="updatedby" ColumnName="updatedby" />
+                <ScalarProperty Name="updateddate" ColumnName="updateddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pickup_Tbl">
+            <EntityTypeMapping TypeName="HotTouchRestModel.Pickup_Tbl">
+              <MappingFragment StoreEntitySet="Pickup_Tbl">
+                <ScalarProperty Name="storeid" ColumnName="storeid" />
+                <ScalarProperty Name="storelocation" ColumnName="storelocation" />
+                <ScalarProperty Name="sotrecity" ColumnName="sotrecity" />
+                <ScalarProperty Name="storecontact1" ColumnName="storecontact1" />
+                <ScalarProperty Name="storecontact2" ColumnName="storecontact2" />
+                <ScalarProperty Name="storecontact3" ColumnName="storecontact3" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+                <ScalarProperty Name="updatedby" ColumnName="updatedby" />
+                <ScalarProperty Name="updateddate" ColumnName="updateddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admin_Tbl">
+            <EntityTypeMapping TypeName="HotTouchRestModel.Admin_Tbl">
+              <MappingFragment StoreEntitySet="Admin_Tbl">
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="confirmpassword" ColumnName="confirmpassword" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="contactno" ColumnName="contactno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

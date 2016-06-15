@@ -3,16 +3,33 @@
     ViewBag.Title = "area";
 }
 
-@using(Html.BeginForm())
-{
-<fieldset>
-    <legend><h3> Choose your Order Type </h3></legend>
-    <div class="h4">
-        @Html.Label("Order Type :")
+
+<div>
+   <div id="menu">
+       <div>
+           <div id="login">
+               <h2> Choose your Order Type</h2>
+               <div class="row" id="del_type" style="margin-top: 50px;">
+                   <label>Order Type:</label>
+                   
+                        <span style="display: block; width: 60%; float: left; line-height: 23px;">
+                            <input type="radio" name="del_type" value="1" checked="checked" />Door Delivery
+                            <input type="radio" name="del_type" value="2" /> Pickup Myself (Takeaway) &nbsp;&nbsp;
+                        </span>
+                    <div class="row" style="margin-top: 30px;">
+                        <label> Choose City</label>
+                        <select id="city" class="form_drop_down">
+                            <option value="">-- Select --</option>
+                            <option value="1">Chennai</option>
+                            <option value="2">Tirunelveli</option>
+                            <option value="3">Kanyakumari</option>
+                            <option value="4">Bangalore</option>
+                        </select>
+                    </div>
+               </div>
+            </div>
+        </div>
     </div>
-    <div class="editor-field">
-        @Html.RadioButton("Pickup",true)
-    </div>
-</fieldset>
-}
+</div>
+
 

@@ -1,0 +1,88 @@
+﻿@model Restaurant_Amb_1.Employee_Tbl
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Employee_Tbl</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.empname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empusername)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empusername)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emppassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emppassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empconfpassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empconfpassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empcontactno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empcontactno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empmailid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empmailid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empaddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empaddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateofjoining)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateofjoining)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

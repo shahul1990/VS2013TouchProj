@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Restaurant_Amb_1.Item_Tbl>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.iname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.itype)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iimage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iprice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.icategory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.createdby)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.createddate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.updatedby)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.updateddate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.iname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.itype)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iimage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iprice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.icategory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.createdby)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.createddate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.updatedby)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.updateddate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.itemid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.itemid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.itemid })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,98 @@
+﻿@model Restaurant_Amb_1.Item_Tbl
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Item_Tbl</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.iname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.itype)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.itype)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.iimage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iimage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.iprice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iprice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.icategory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.icategory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createdby)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createdby)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createddate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createddate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.updatedby)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.updatedby)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.updateddate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.updateddate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.itemid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Restaurant_Amb_1.Employee_Tbl>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.empname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empusername)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emppassword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empconfpassword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empcontactno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empmailid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empaddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateofjoining)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.empname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empusername)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emppassword)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empconfpassword)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empcontactno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empmailid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empaddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateofjoining)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.empid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.empid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.empid })
+        </td>
+    </tr>
+}
+
+</table>

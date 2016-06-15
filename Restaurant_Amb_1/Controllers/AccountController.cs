@@ -372,7 +372,7 @@ namespace Restaurant_Amb_1.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Admin");
             }
         }
 
