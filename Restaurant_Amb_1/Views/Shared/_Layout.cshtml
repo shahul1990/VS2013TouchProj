@@ -42,9 +42,9 @@
                                             <li>@Html.ActionLink("Catering", "Index", "OrderPage")</li>
                                         </ul>
                                     </li>
-                                    <li>@Html.ActionLink("Cart", "area", "OrderOnline", new { id = "menuCart" })</li>
+                                    @*<li>@Html.ActionLink("Cart", "area", "OrderOnline", new { id = "menuCart" })</li>*@
                                     <li>@Html.ActionLink("Track your Order", "Index", "OrderPage", new { id = "menuTrack" })</li>
-                                    <li>@Html.ActionLink("Reach Us", "Index", "OrderPage", new { id = "menuContact" })</li>
+                                    <li>@Html.ActionLink("Reach Us", "Contact", "Home", new { id = "menuContact" })</li>
                                     <!--<li>@Html.Partial("_LoginPartial")</li>-->
                                 </ul>
                             </nav>
@@ -68,7 +68,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-sm-8 col-xs-12">
-                    <a href="#">Home</a> | <a href="#">Map</a> | <a href="#">Contact Us</a> | <a href="#">About Us</a><br />
+                    <a href="/">Home</a> | <a href="#">Menu</a> | <a href="/Home/Contact">Contact Us</a> | <a href="/Home/About">About Us</a><br />
                     <span>&copy; @DateTime.Now.Year - Powered By: BRASSY Techonologies (FZE), Sharjah, UAE</span>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12">
@@ -78,17 +78,17 @@
         </div>
     </footer>
     <p id="back-top">
-        <a href="#top"><span><i class="fa fa-angle-up"></i></span></a>
+        <a href="#top"><span><img src="~/Content/Images/arrow.png" alt="back to top" /></span></a>
     </p>
     <script type="text/javascript">
         $(document).ready(function () {
             $('#back-top').hide();
             $(window).scroll(function () {
                 if ($(this).scrollTop() > 10) {
-                    // $(".navbar-fixed-top").addClass("menufix-part");
+                    $(".navbar-fixed-top").css("box-shadow", "0px 0px 10px rgba(0,0,0,.2)");
                 }
                 else {
-                    // $(".navbar-fixed-top").removeClass("menufix-part");
+                    $(".navbar-fixed-top").css("box-shadow", "none");
                 }
                 if ($(this).scrollTop() > 100) {
                     $('#back-top').fadeIn();

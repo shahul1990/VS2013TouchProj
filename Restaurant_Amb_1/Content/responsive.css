@@ -27,10 +27,10 @@
    .aboutText .column h2, .aboutText .column h3, .aboutText .column h1 {font-size:20px;}
    .steps > div:first-child, .steps > div:nth-child(2) {margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #191919;}
    .sepLine {width:75%;}
-   
-     .rightColum {margin:0px;}
+   .rightColum {margin:0px;}
    .blueGrd.topMargin {margin-top:20px;}
    .navigation li {font-size:14px;}
+   .navigation li a {padding:5px 8px;}
    
 }
 @media only screen and (max-width:780px) {
@@ -40,15 +40,17 @@
     
 }
 @media only screen and (max-width:690px) {
-   
+   .bodyContent {padding-bottom:105px;}
    .logo img {width:100%; margin-top:0px;}
    .navbar-collapse {border-top:none; padding:0px;}
    .navigation {padding:0px; margin:10px 0px 0px; float:none; left:0; text-align:left;}
    .navigation > li {display:block; border-left:none; padding:2px 0px; float:none; left:0;}
    .navigation li a { padding: 10px 20px 10px 20px; }
-   .banner { height:400px; max-height:400px; padding-top:10px;}
+   .banner { height:300px; max-height:300px; padding-top:10px;}
+   .bannerInner { height:150px; max-height:150px; padding-top:10px;}
    .banner .bannerBg {width:90%;}
    .banner h2 {font-size:24px; margin-top:100px;}
+   .bannerInner h2 {font-size:22px; margin-top:75px;}
    .banner .irsLogo {margin-left:0px; margin-top:0px; position:inherit; left:0px;}
    .banner .irsLogo img {width:50px;}
    .banner .priceTag {width:80px; position:inherit; right:0px;}
@@ -61,6 +63,7 @@
    .rightColum {margin:30px;}
    .titleText h1, .titleText h2 {font-size:30px;}
    .cards img {width:20%;}
+   .aboutImg {float:none; width:100%; margin:0px 0px 30px;}
 }
 @media only screen and (max-width:590px) {
         

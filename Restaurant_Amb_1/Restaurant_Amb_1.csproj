@@ -172,18 +172,16 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\Copy of Site.css" />
+    <Content Include="Content\Images\arrow.png" />
     <Content Include="Content\Images\bannerBg.jpg" />
     <Content Include="Content\Images\body_bg.jpg" />
-    <Content Include="Content\Images\home.png" />
-    <Content Include="Content\Images\hottouchlogo.jpg" />
-    <Content Include="Content\Images\hottouchlogo1.jpg" />
-    <Content Include="Content\Images\hottouchlogo2.jpg" />
     <Content Include="Content\Images\img1.jpg" />
     <Content Include="Content\Images\img2.jpg" />
     <Content Include="Content\Images\img3.jpg" />
     <Content Include="Content\Images\img4.jpg" />
     <Content Include="Content\Images\img5.jpg" />
     <Content Include="Content\Images\img6.jpg" />
+    <Content Include="Content\Images\img7.jpg" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\responsive.css" />
     <Content Include="Content\Site.css" />
