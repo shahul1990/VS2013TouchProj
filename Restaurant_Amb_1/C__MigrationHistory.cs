@@ -12,12 +12,11 @@ namespace Restaurant_Amb_1
     using System;
     using System.Collections.Generic;
     
-    public partial class Admin_Tbl
+    public partial class C__MigrationHistory
     {
-        public string username { get; set; }
-        public string password { get; set; }
-        public string confirmpassword { get; set; }
-        public string email { get; set; }
-        public string contactno { get; set; }
+        public string MigrationId { get; set; }
+        public string ContextKey { get; set; }
+        public byte[] Model { get; set; }
+        public string ProductVersion { get; set; }
     }
 }
