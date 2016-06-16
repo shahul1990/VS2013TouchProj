@@ -18,6 +18,6 @@ namespace Restaurant_Amb_1
         public string password { get; set; }
         public string confirmpassword { get; set; }
         public string email { get; set; }
-        public string contactno { get; set; }
+        public byte[] contactno { get; set; }
     }
 }
