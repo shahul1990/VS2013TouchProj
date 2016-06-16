@@ -1,17 +1,32 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+@section banner {
+    <div class="bannerInner">
+        <div class="container">
+            <div class="row">
+                <h2>Authentic Recipes For You</h2>
+            </div>
+        </div>
+    </div>
+}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <h2>Reach Us</h2>
+    <div class="barLine"></div>
+    <address>
+        One Microsoft Way<br />
+        Redmond, WA 98052-6399<br />
+        <abbr title="Phone">P:</abbr>
+        425.555.0100
+    </address>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+    <address>
+        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    </address>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('#menuContact').addClass('active');
+    });
+</script>

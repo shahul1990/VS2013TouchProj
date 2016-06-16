@@ -3,7 +3,8 @@
 
 * {margin:0px; padding:0px; list-style-type:none; outline:none !important;}
 
-body {font:500 14px 'Open Sans', Arial, Helvetica, sans-serif; color:#333;}
+html {position:relative; min-height:100%;}
+body {font:500 14px 'Open Sans', Arial, Helvetica, sans-serif; color:#333; min-height:100%;}
 .taL {text-align:left;}
 .taC {text-align:center;}
 .taR {text-align:right;}
@@ -20,27 +21,36 @@ body {font:500 14px 'Open Sans', Arial, Helvetica, sans-serif; color:#333;}
 .navigation {margin:12px 0px 0px; padding:0px; list-style-type:none;transition: all 0.5s ease 0s;-webkit-transition: all 0.5s ease 0s;-moz-transition: all 0.5s ease 0s;-ms-transition: all 0.5s ease 0s;}
 .navigation li {display:inline-block; font:600 15px 'Open Sans', Arial, Helvetica, sans-serif; padding:0px 2px;}
 .navigation li a {display:block; padding:5px 10px; text-decoration:none; border-bottom:5px solid transparent; color:#333;}
-.navigation li a:hover {color:#18bc71;}
-.navigation li a.active {border-bottom:5px solid #18bc71;}
+.navigation li a:hover {color:#e31836;}
+.navigation li a.active {border-bottom:5px solid #b50000;}
 .navigation li.loginNav a {background:#e31836; color:#fff; border-radius:4px; border-bottom:none;}
 .dropdown-menu > li {display:block;}
 
-.banner {background:url(Images/bannerBg.jpg) no-repeat center center; background-size:cover; max-height:600px; height:600px; margin-top:0; text-align:center;}
+.banner {background:url(Images/bannerBg.jpg) no-repeat center center; background-size:cover; max-height:500px; height:500px; margin-top:0; text-align:center;}
 .banner h2 {margin-top:200px; color:#fff; font:bold 36px 'Open Sans', Arial, Helvetica, sans-serif; text-shadow:0px 0px 15px rgba(0,0,0,.75); margin-bottom:20px;}
 .banner .bannerBg {background:rgba(227, 24, 54, .85); margin:auto; width:80%; height:200px; border-radius:6px; text-align:left; color:#fff; padding:10px 20px;}
+.bannerAdmin {background:url(Images/img1.jpg) no-repeat center center; background-size:cover; max-height:250px; height:250px; margin-top:0; text-align:center;}
+.bannerInner {background:url(Images/bannerBg.jpg) no-repeat center center; background-size:cover; max-height:250px; height:250px; margin-top:0; text-align:center;}
+.bannerInner h2 {margin-top:130px; color:#fff; font:bold 36px 'Open Sans', Arial, Helvetica, sans-serif; text-shadow:0px 0px 15px rgba(0,0,0,.75); margin-bottom:20px;}
+.bannerInner .bannerBg {background:rgba(227, 24, 54, .85); margin:auto; width:80%; height:200px; border-radius:6px; text-align:left; color:#fff; padding:10px 20px;}
 
-.bodyContent {padding:30px 0px;}
+.bodyContent {padding:30px 0px 85px;}
+.bodyContent h1, .bodyContent h2, .bodyContent h3, .bodyContent h4, .bodyContent h5, .bodyContent h6 {margin:0 0 10px; font-family:'Open Sans'; font-weight:500;}
 .menuList {color:#717171; font-size:13px;}
-.menuList img {float:left; margin:0px 20px 10px 0px;}
+.menuList div {margin:20px 0px; overflow:hidden;}
+.menuList img {float:left; margin:0px 20px 10px 0px; border: 5px solid #fff; border-radius: 50%; box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);}
 .menuList h4 {font:bold 16px 'Open Sans', Arial, Helvetica, sans-serif; color:#e31836; margin:0px 0px 5px;}
-.orderBtn {background:#18bc71; color:#fff; text-decoration:none; font:bold 13px 'Open Sans', Arial, Helvetica, sans-serif; display:inline-block; border-radius:4px; padding:5px 10px; margin-top:15px; clear:both;}
+.orderBtn {background:#440000; color:#fff; text-decoration:none; font:bold 13px 'Open Sans', Arial, Helvetica, sans-serif; display:inline-block; border-radius:4px; padding:5px 10px; margin-top:15px; clear:both;}
 .orderBtn:hover {background:#e31836; text-decoration:none; color:#fff;}
+.onlineBtn {background:#e31836; color:#fff; text-decoration:none; font:bold 30px 'Open Sans', Arial, Helvetica, sans-serif; display:inline-block; border-radius:4px; padding:10px 20px; margin-top:15px; clear:both; text-transform:uppercase; box-shadow:0px 0px 20px rgba(0,0,0,.8);}
+.onlineBtn:hover {background:#e31836; text-decoration:none; color:#fff;}
 
-footer {background:#f4f3f0; text-align:left; padding:10px 0px; border-top:1px solid #dbdbdb;}
+.barLine {height:2px; background:#d80001; width:200px; margin-bottom:20px;}
+.aboutImg {float:left; margin:0px 20px 30px 0px; border-radius:6px;}
+
+footer {background:#f4f3f0; text-align:left; padding:10px 0px; border-top:1px solid #dbdbdb; position:absolute; bottom:0px; width:100%;}
 footer span {font-size:12px; color:#9c9c9c;}
 
 #back-top {bottom: 10px; position: fixed; right: 20px; z-index: 999;}
-#back-top a {color: #bbb; display: block; text-align: center; text-decoration: none; text-transform: uppercase; transition: all 1s ease 0s;-webkit-transition: all 1s ease 0s;-moz-transition: all 1s ease 0s;-ms-transition: all 1s ease 0s; width: 40px;}
-#back-top span i {background: #333; border-radius: 50px; color: #fff; display: block; font-size: 30px; height: 37px; line-height: 33px; opacity: 0.9; transition: all 1s ease 0s;-webkit-transition: all 1s ease 0s;-moz-transition: all 1s ease 0s;-ms-transition: all 1s ease 0s; width: 37px;}
-
-.margin-top-20 { margin-top:20px;}
+#back-top a {color: #bbb; display: block; text-align: center; text-decoration: none; text-transform: uppercase; transition: all 1s ease 0s;-webkit-transition: all 1s ease 0s;-moz-transition: all 1s ease 0s;-ms-transition: all 1s ease 0s; width: 42px;}
+#back-top span {background: #333; border-radius: 50px; color: #fff; display: block; font-size: 30px; height: 42px; line-height: 33px; opacity: 0.9; transition: all 1s ease 0s;-webkit-transition: all 1s ease 0s;-moz-transition: all 1s ease 0s;-ms-transition: all 1s ease 0s; width: 42px;}

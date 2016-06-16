@@ -3,8 +3,15 @@
 @{
     ViewBag.Title = "Create";
 }
-
-<h2>Create</h2>
+@section banner {
+    <div class="bannerAdmin">
+        <div class="container">
+            <div class="row">
+            </div>
+        </div>
+    </div>
+}
+<h2>New Product</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,7 +19,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Item_Tbl</h4>
+        @*<h4>Item_Tbl</h4>*@
         <hr />
         @Html.ValidationSummary(true)
 
