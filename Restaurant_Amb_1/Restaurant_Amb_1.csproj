@@ -339,10 +339,6 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="RestaurantSQLDB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RestaurantSQLDB.Context1.cs</LastGenOutput>
-    </Content>
     <EntityDeploy Include="RestaurantSQLDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>RestaurantSQLDB1.Designer.cs</LastGenOutput>
