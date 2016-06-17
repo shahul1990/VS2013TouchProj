@@ -187,6 +187,7 @@
       <DependentUpon>RestaurantSQLDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Pickup_Tbl.cs">
       <DependentUpon>RestaurantSQLDB.tt</DependentUpon>
@@ -416,6 +417,7 @@
     <Content Include="Views\Pickup\Details.cshtml" />
     <Content Include="Views\Pickup\Edit.cshtml" />
     <Content Include="Views\Pickup\Index.cshtml" />
+    <Content Include="Views\Home\Menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

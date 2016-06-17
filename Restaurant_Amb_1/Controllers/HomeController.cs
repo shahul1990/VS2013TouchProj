@@ -15,16 +15,46 @@ namespace Restaurant_Amb_1.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+          //  ViewBag.Message = "Your application description page.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
+            //ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult Menu()
+        {
+            //ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult PartyHall()
+        {
+            //ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult Dinning_Buffets()
+        {
             ViewBag.Message = "Your contact page.";
 
             return View();
         }
+
+        public ActionResult Catering()
+        {
+            //ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+     
     }
 }

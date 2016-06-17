@@ -24,7 +24,7 @@
         @Html.ValidationSummary(true)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.iname, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.iname, "Item Name :", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.iname)
                 @Html.ValidationMessageFor(model => model.iname)
@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.idesc, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.idesc, "Description :", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.idesc)
                 @Html.ValidationMessageFor(model => model.idesc)
@@ -40,7 +40,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.itype, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.itype, "Item Type:", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.itype)
                 @Html.ValidationMessageFor(model => model.itype)
@@ -48,7 +48,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.iimage, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.iimage, "Image :", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.iimage)
                 @Html.ValidationMessageFor(model => model.iimage)
@@ -56,7 +56,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.iprice, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.iprice, "Price :", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.iprice)
                 @Html.ValidationMessageFor(model => model.iprice)
@@ -64,7 +64,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.icategory, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.icategory, "Category :", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.icategory)
                 @Html.ValidationMessageFor(model => model.icategory)
@@ -72,22 +72,31 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.createdby, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.createdby,"Created By :", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.createdby)
                 @Html.ValidationMessageFor(model => model.createdby)
             </div>
         </div>
-
+       
         <div class="form-group">
-            @Html.LabelFor(model => model.createddate, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.createddate, "Created Date :", new { @class = "control-label col-md-2" })
+            @*@section Scripts{
+                @Scripts.Render("~/bundles/jqueryval")
+            <script type="text/javascript">
+                $(document).ready(function() {
+                $('#SelDate').datepicker();
+                });
+
+                </script>
+                }*@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.createddate)
                 @Html.ValidationMessageFor(model => model.createddate)
             </div>
         </div>
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.updatedby, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.updatedby)
@@ -101,7 +110,7 @@
                 @Html.EditorFor(model => model.updateddate)
                 @Html.ValidationMessageFor(model => model.updateddate)
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
