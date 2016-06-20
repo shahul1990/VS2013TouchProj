@@ -8,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Restaurant_Amb_1;
+using System.IO;
 
 namespace Restaurant_Amb_1.Controllers
 {
@@ -18,7 +19,9 @@ namespace Restaurant_Amb_1.Controllers
         // GET: /Item/
         public async Task<ActionResult> Index()
         {
+            ViewBag.CatName = db.Category_Tbl.ToList();
             return View(await db.Item_Tbl.ToListAsync());
+            
         }
 
         // GET: /Item/Details/5
@@ -37,6 +40,7 @@ namespace Restaurant_Amb_1.Controllers
         }
 
         // GET: /Item/Create
+
         public ActionResult Create()
         {
             return View();
@@ -49,6 +53,7 @@ namespace Restaurant_Amb_1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include="itemid,iname,idesc,itype,iimage,iprice,icategory,createdby,createddate,updatedby,updateddate")] Item_Tbl item_tbl)
         {
+            var categrory = db.Category_Tbl.Include(a => a.categoryname);
             if (ModelState.IsValid)
             {
                 db.Item_Tbl.Add(item_tbl);
@@ -124,5 +129,7 @@ namespace Restaurant_Amb_1.Controllers
             }
             base.Dispose(disposing);
         }
+
+        
     }
 }

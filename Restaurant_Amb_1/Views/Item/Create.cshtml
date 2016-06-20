@@ -1,5 +1,4 @@
 ﻿@model Restaurant_Amb_1.Item_Tbl
-
 @{
     ViewBag.Title = "Create";
 }
@@ -13,115 +12,135 @@
 }
 <h2>New Product</h2>
 
+<div class="col-lg-8">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        @*<h4>Item_Tbl</h4>*@
-        <hr />
-        @Html.ValidationSummary(true)
+        <div class="form-horizontal">
+            @*<h4>Item_Tbl</h4>*@
+            <hr />
+            @Html.ValidationSummary(true)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.iname, "Item Name :", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.iname)
-                @Html.ValidationMessageFor(model => model.iname)
+            <div class="form-group">
+                @Html.LabelFor(model => model.iname, "Item Name :", new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.iname)
+                    @Html.ValidationMessageFor(model => model.iname)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.idesc, "Description :", new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.idesc)
+                    @Html.ValidationMessageFor(model => model.idesc)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.itype, "Item Type:", new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.itype)
+                    @Html.ValidationMessageFor(model => model.itype)
+                </div>
+            </div>
+
+            @*<div class="form-group">
+                    @Html.LabelFor(model => model.iimage, "Image :", new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.iimage)
+                        @Html.ValidationMessageFor(model => model.iimage)
+                    </div>
+                </div>*@
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.iimage, "Image :", new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @using (Html.BeginForm("Create", "Content", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <input type="file" name="ImageData" id="ImageData" onchange="fileCheck(this);" />
+                    }
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.iprice, "Price :", new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.iprice)
+                    @Html.ValidationMessageFor(model => model.iprice)
+                </div>
+            </div>
+            
+            <div class="form-group">
+                @Html.LabelFor(model => model.icategory, "Category :", new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.icategory)
+                    @Html.ValidationMessageFor(model => model.icategory)
+                </div>
+            </div>
+
+            @*<div class="form-group">
+                @Html.LabelFor(model => model.icategory, "Category :", new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(new SelectList (ViewBag.CatName,"categoryname"), "Select Category",new {@class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.icategory)
+                </div>
+            </div>*@
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.createdby, "Created By :", new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.createdby)
+                    @Html.ValidationMessageFor(model => model.createdby)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.createddate, "Created Date :", new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.createddate, new { @class = "datepicker" })
+                    @Html.ValidationMessageFor(model => model.createddate)
+                </div>
+            </div>
+
+            @*<div class="form-group">
+                    @Html.LabelFor(model => model.updatedby, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.updatedby)
+                        @Html.ValidationMessageFor(model => model.updatedby)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.updateddate, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.updateddate)
+                        @Html.ValidationMessageFor(model => model.updateddate)
+                    </div>
+                </div>*@
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.idesc, "Description :", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.idesc)
-                @Html.ValidationMessageFor(model => model.idesc)
-            </div>
+    }
+</div>
+<div class="col-lg-4">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"> More Controls</h3>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.itype, "Item Type:", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.itype)
-                @Html.ValidationMessageFor(model => model.itype)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.iimage, "Image :", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.iimage)
-                @Html.ValidationMessageFor(model => model.iimage)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.iprice, "Price :", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.iprice)
-                @Html.ValidationMessageFor(model => model.iprice)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.icategory, "Category :", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.icategory)
-                @Html.ValidationMessageFor(model => model.icategory)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.createdby,"Created By :", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.createdby)
-                @Html.ValidationMessageFor(model => model.createdby)
-            </div>
-        </div>
-       
-        <div class="form-group">
-            @Html.LabelFor(model => model.createddate, "Created Date :", new { @class = "control-label col-md-2" })
-            @*@section Scripts{
-                @Scripts.Render("~/bundles/jqueryval")
-            <script type="text/javascript">
-                $(document).ready(function() {
-                $('#SelDate').datepicker();
-                });
-
-                </script>
-                }*@
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.createddate)
-                @Html.ValidationMessageFor(model => model.createddate)
-            </div>
-        </div>
-
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.updatedby, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.updatedby)
-                @Html.ValidationMessageFor(model => model.updatedby)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.updateddate, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.updateddate)
-                @Html.ValidationMessageFor(model => model.updateddate)
-            </div>
-        </div>*@
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+        <div class="panel-body">
+            <a href="@Url.Action("Create", "Category")" class="btn btn-success btn-primary btn-block"> <span class="glyphicon glyphicon-th"></span> Add new Category</a>
+            <br />
+            <a href="@Url.Action("Create", "Category")" class="btn btn-success btn-primary btn-block"> <span class="glyphicon glyphicon-th"></span> Add new Item Type</a>
+            <br />
+            <a href="@Url.Action("Index","Admin")" class="btn btn-warning btn-primary btn-block"> <span class="glyphicon glyphicon-home"> Home</span></a>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>
 
 @section Scripts {

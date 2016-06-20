@@ -36,6 +36,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.idesc, "Description :", new { @class = "control-label col-md-2" })
+            @*@Html.TextAreaFor(model => model.idesc, new { maxlenght = 200 })*@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.idesc)
                 @Html.ValidationMessageFor(model => model.idesc)

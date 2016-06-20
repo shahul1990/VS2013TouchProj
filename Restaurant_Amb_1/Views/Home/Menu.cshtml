@@ -11,42 +11,77 @@
         </div>
     </div>
 }
+<h2>Show Database value in DataTable</h2>
+<div>
+    @*<table id="t01">*@
+        @*<thead>
+            <th>Item Name</th>
+            <th>Item Category</th>
+            <th>Item Type</th>
+            <th>Item Image</th>
+        </thead>*@
+    <div id="product" class="portfolioremove" data-option-key="filter">
+        <h2> 
+             <a class="prolink" href="#filter" data-option-value="*">All <span> </span></a> 
+             <a class="prolink" href="#filter" data-option-value=".Veg">Veg <span> </span></a> 
+             <a class="prolink" href="#filter" data-option-value=".Non Veg">Non Veg </a>
+             <a class="prolink" href="#filter" data-option-value=".Drinks">Drinks</a>
+             <a class="prolink" href="#filter" data-option-value=".Deserts">Deserts </a> 
+        </h2>
+    </div>
 
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Vegetarian <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Non Vegetarian</a></li>
-                @*<ul class="bodyContent">
-                    <li>
-                    <div class="row">
-                        <div class="col-xs-6 col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img src="..." alt="...">
-                            </a>
-                        </div>
-                        ...
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-6 col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img src="..." alt="...">
-                            </a>
-                        </div>
-                        ...
-                    </div>
-                    </li>
-                </ul>*@
-                <li><a href="#">Kababs | Barbeques </a></li>
-                <li><a href="#">Curries</a></li>
-                <li><a href="#">Fish & Prawns</a></li>
-                <li><a href="#">Chinese</a></li>
-                <li><a href="#">Drinks</a></li>
-            </ul>
-           
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-</nav>
+
+    @foreach (var item in ViewBag.userdetails)
+    {
+        <div class="col-md-3 col-sm-4 col-xs-12" data-category="@item.icategory">
+            @item.iname
+            <br/>
+            @item.itype
+            <br/>
+            <div>
+                @item.iimage
+                <img src="~/Content/Images/img2.jpg" />
+            </div>
+        </div>
+    }   
+</div>
+
+
+
+<style>
+    table#t01 {
+        width: 100%;
+        background-color: #f1f1c1;
+    }
+
+        table#t01 tr:nth-child(even) {
+            background-color: #eee;
+        }
+
+        table#t01 tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        table#t01 th {
+            color: white;
+            background-color: blue;
+        }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 15px;
+    }
+</style> 

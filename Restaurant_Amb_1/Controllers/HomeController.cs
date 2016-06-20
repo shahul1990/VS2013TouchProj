@@ -30,7 +30,9 @@ namespace Restaurant_Amb_1.Controllers
         public ActionResult Menu()
         {
             //ViewBag.Message = "Your contact page.";
-
+            HotTouchRestEntities htr = new HotTouchRestEntities();
+            var data = htr.Item_Tbl.ToList();
+            ViewBag.userdetails = data;
             return View();
         }
 

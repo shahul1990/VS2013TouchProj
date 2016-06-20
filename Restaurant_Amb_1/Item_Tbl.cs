@@ -18,27 +18,29 @@ namespace Restaurant_Amb_1
     public partial class Item_Tbl
     {
         public int itemid { get; set; }
-        [DisplayName("Item Name :")]
+        [Required, DisplayName("Item Name :")]
         public string iname { get; set; }
         [DisplayName("Description :")]
         [DataType(DataType.Html)]
         public string idesc { get; set; }
-        [DisplayName("Item Type:")]
+        [Required, DisplayName("Item Type:")]
         public string itype { get; set; }
-        //[AllowHtml]
+        [AllowHtml]
         [DisplayName("Image :")]
         public byte[] iimage { get; set; }
-        [DisplayName("Price :")]
+        [Required, DisplayName("Price :")]
         public decimal iprice { get; set; }
-        [DisplayName("Category :")]
+        [Required, DisplayName("Category :")]
         public string icategory { get; set; }
-        [DisplayName("Created By :")]
+        [Required, DisplayName("Created By :")]
         public string createdby { get; set; }
-        [DisplayName("Created Date :")]
+        [Required,DisplayName("Created Date :")]
+        [DataType(DataType.Date)]
         public System.DateTime createddate { get; set; }
         [DisplayName("Updated By :")]
         public string updatedby { get; set; }
         [DisplayName("Updated Date:")]
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> updateddate { get; set; }
     }
 }
