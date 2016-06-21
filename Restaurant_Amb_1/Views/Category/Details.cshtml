@@ -1,14 +1,17 @@
 ﻿@model Restaurant_Amb_1.Category_Tbl
 
-@{
-    ViewBag.Title = "Details";
+@section banner {
+    <div class="bannerAdmin">
+        <div class="container">
+            <div class="row">
+            </div>
+        </div>
+    </div>
 }
-
 <h2>Details</h2>
 
 <div>
-    <h4>Category_Tbl</h4>
-	<hr />
+ 
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.categoryname)
@@ -61,6 +64,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.categoryid }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.categoryid }, new { @class = "btn btn-primary" }) |
+    @Html.ActionLink("Back to List", "Index", new { @class = "btn btn-primary" })
 </p>

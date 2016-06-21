@@ -1,9 +1,12 @@
 ﻿@model IEnumerable<Restaurant_Amb_1.Pickup_Tbl>
-
-@{
-    ViewBag.Title = "Index";
+@section banner {
+    <div class="bannerAdmin">
+        <div class="container">
+            <div class="row">
+            </div>
+        </div>
+    </div>
 }
-
 <h2>Index</h2>
 
 <p>
@@ -22,9 +25,6 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.storecontact2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.storecontact3)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.createdby)
@@ -54,9 +54,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.storecontact2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.storecontact3)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.createdby)

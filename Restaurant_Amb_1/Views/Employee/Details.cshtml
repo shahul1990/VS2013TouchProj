@@ -1,9 +1,13 @@
 ﻿@model Restaurant_Amb_1.Employee_Tbl
 
-@{
-    ViewBag.Title = "Details";
+@section banner {
+    <div class="bannerAdmin">
+        <div class="container">
+            <div class="row">
+            </div>
+        </div>
+    </div>
 }
-
 <h2>Details</h2>
 
 <div>
@@ -77,6 +81,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.empid }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.empid }, new { @class = "btn btn-primary" }) |
+    @Html.ActionLink("Back to List", "Index", new { @class = "btn btn-primary" })
 </p>

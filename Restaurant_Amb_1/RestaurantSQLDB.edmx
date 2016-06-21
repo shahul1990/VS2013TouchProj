@@ -4,20 +4,17 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="HotTouchRestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'HotTouchRest.dbo.Admin_Tbl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+    <Schema Namespace="HotTouchRestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admin_Tbl">
           <Key>
-            <PropertyRef Name="username" />
-            <PropertyRef Name="password" />
-            <PropertyRef Name="confirmpassword" />
+            <PropertyRef Name="id" />
           </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="password" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="confirmpassword" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="email" Type="varchar" MaxLength="50" />
-          <Property Name="contactno" Type="varbinary" MaxLength="13" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="contactno" Type="varchar" MaxLength="15" />
         </EntityType>
         <EntityType Name="Category_Tbl">
           <Key>
@@ -73,6 +70,17 @@ warning 6002: The table/view 'HotTouchRest.dbo.Admin_Tbl' does not have a primar
           <Property Name="updatedby" Type="varchar" MaxLength="20" />
           <Property Name="updateddate" Type="datetime" />
         </EntityType>
+        <EntityType Name="Itemtype_Tbl">
+          <Key>
+            <PropertyRef Name="ItemTypeId" />
+          </Key>
+          <Property Name="ItemTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Createby" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="createddate" Type="date" Nullable="false" />
+          <Property Name="updatedby" Type="varchar" MaxLength="20" />
+          <Property Name="upadateddate" Type="date" />
+        </EntityType>
         <EntityType Name="Pickup_Tbl">
           <Key>
             <PropertyRef Name="storeid" />
@@ -89,23 +97,15 @@ warning 6002: The table/view 'HotTouchRest.dbo.Admin_Tbl' does not have a primar
           <Property Name="updateddate" Type="datetime" />
         </EntityType>
         <EntityContainer Name="HotTouchRestModelStoreContainer">
+          <EntitySet Name="Admin_Tbl" EntityType="Self.Admin_Tbl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category_Tbl" EntityType="Self.Category_Tbl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employee_Tbl" EntityType="Self.Employee_Tbl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HomeDelivery_Tbl" EntityType="Self.HomeDelivery_Tbl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Item_Tbl" EntityType="Self.Item_Tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Itemtype_Tbl" EntityType="Self.Itemtype_Tbl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pickup_Tbl" EntityType="Self.Pickup_Tbl" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Admin_Tbl" EntityType="Self.Admin_Tbl" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Admin_Tbl].[username] AS [username], 
-    [Admin_Tbl].[password] AS [password], 
-    [Admin_Tbl].[confirmpassword] AS [confirmpassword], 
-    [Admin_Tbl].[email] AS [email], 
-    [Admin_Tbl].[contactno] AS [contactno]
-    FROM [dbo].[Admin_Tbl] AS [Admin_Tbl]</DefiningQuery>
-          </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HotTouchRestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -178,26 +178,37 @@ warning 6002: The table/view 'HotTouchRest.dbo.Admin_Tbl' does not have a primar
           <Property Name="updatedby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="updateddate" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityType Name="Admin_Tbl">
-          <Key>
-            <PropertyRef Name="username" />
-            <PropertyRef Name="password" />
-            <PropertyRef Name="confirmpassword" />
-          </Key>
-          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="confirmpassword" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="contactno" Type="Binary" MaxLength="13" FixedLength="false" />
-        </EntityType>
         <EntityContainer Name="HotTouchRestEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Category_Tbl" EntityType="Self.Category_Tbl" />
           <EntitySet Name="Employee_Tbl" EntityType="Self.Employee_Tbl" />
           <EntitySet Name="HomeDelivery_Tbl" EntityType="Self.HomeDelivery_Tbl" />
           <EntitySet Name="Item_Tbl" EntityType="Self.Item_Tbl" />
           <EntitySet Name="Pickup_Tbl" EntityType="Self.Pickup_Tbl" />
-          <EntitySet Name="Admin_Tbl" EntityType="Self.Admin_Tbl" />
+          <EntitySet Name="Itemtype_Tbl" EntityType="HotTouchRestModel.Itemtype_Tbl" />
+          <EntitySet Name="Admin_Tbl" EntityType="HotTouchRestModel.Admin_Tbl" />
         </EntityContainer>
+        <EntityType Name="Itemtype_Tbl">
+          <Key>
+            <PropertyRef Name="ItemTypeId" />
+          </Key>
+          <Property Name="ItemTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Createby" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="updatedby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="upadateddate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Admin_Tbl">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="confirmpassword" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="contactno" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -278,14 +289,27 @@ warning 6002: The table/view 'HotTouchRest.dbo.Admin_Tbl' does not have a primar
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Itemtype_Tbl">
+            <EntityTypeMapping TypeName="HotTouchRestModel.Itemtype_Tbl">
+              <MappingFragment StoreEntitySet="Itemtype_Tbl">
+                <ScalarProperty Name="upadateddate" ColumnName="upadateddate" />
+                <ScalarProperty Name="updatedby" ColumnName="updatedby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+                <ScalarProperty Name="Createby" ColumnName="Createby" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ItemTypeId" ColumnName="ItemTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Admin_Tbl">
             <EntityTypeMapping TypeName="HotTouchRestModel.Admin_Tbl">
               <MappingFragment StoreEntitySet="Admin_Tbl">
-                <ScalarProperty Name="username" ColumnName="username" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="confirmpassword" ColumnName="confirmpassword" />
-                <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="contactno" ColumnName="contactno" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="confirmpassword" ColumnName="confirmpassword" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

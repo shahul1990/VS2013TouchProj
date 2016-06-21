@@ -11,18 +11,29 @@ namespace Restaurant_Amb_1
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel;
+
     public partial class Pickup_Tbl
     {
         public int storeid { get; set; }
+        [Required, DisplayName("Location Name")]
         public string storelocation { get; set; }
+        [Required, DisplayName("City")]
         public string sotrecity { get; set; }
+        [Required, DisplayName("Contact No")]
         public string storecontact1 { get; set; }
+        [DisplayName("Alternative Contact No")]
         public string storecontact2 { get; set; }
-        public string storecontact3 { get; set; }
+        [Required, DisplayName("Created By")]
         public string createdby { get; set; }
+        [Required, DisplayName("Created Date")]
+        [DataType(DataType.Date)]
         public System.DateTime createddate { get; set; }
+        [DisplayName("Updated By")]
         public string updatedby { get; set; }
+        [DisplayName("Updated Date")]
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> updateddate { get; set; }
     }
 }

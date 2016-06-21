@@ -1,14 +1,16 @@
 ﻿@model IEnumerable<Restaurant_Amb_1.Employee_Tbl>
 
-@{
-    ViewBag.Title = "Index";
+@section banner {
+    <div class="bannerAdmin">
+        <div class="container">
+            <div class="row">
+            </div>
+        </div>
+    </div>
 }
+<h2>Employee's Details</h2>
+<div class="barLine"></div>
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -17,24 +19,24 @@
         <th>
             @Html.DisplayNameFor(model => model.empusername)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.emppassword)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.empconfpassword)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.empcontactno)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.empmailid)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.empaddress)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.dateofjoining)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -46,30 +48,33 @@
         <td>
             @Html.DisplayFor(modelItem => item.empusername)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.emppassword)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.empconfpassword)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.empcontactno)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.empmailid)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.empaddress)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.dateofjoining)
-        </td>
+        </td>*@
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.empid }) |
-            @Html.ActionLink("Details", "Details", new { id=item.empid }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.empid })
+            @Html.ActionLink("Edit", "Edit", new { id = item.empid }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.empid }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.empid }, new { @class = "btn btn-primary" })
         </td>
     </tr>
 }
 
 </table>
+<p>
+    @Html.ActionLink("Add New Product", "Create", null, new { @class = "btn btn-primary btn-large" })
+</p>

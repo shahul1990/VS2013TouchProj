@@ -11,15 +11,25 @@ namespace Restaurant_Amb_1
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Category_Tbl
     {
         public int categoryid { get; set; }
+        [Required, DisplayName("Name")]
         public string categoryname { get; set; }
+        [Required, DisplayName("Description")]
         public string categorydesc { get; set; }
+        [Required, DisplayName("Created By")]
         public string createdby { get; set; }
+        [Required, DisplayName("Created Date")]
+        [DataType(DataType.Date)]
         public System.DateTime createddate { get; set; }
+        [DisplayName("Updated By")]
         public string updatedby { get; set; }
+        [DisplayName("Updated Date")]
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> updateddate { get; set; }
     }
 }

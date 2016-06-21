@@ -1,14 +1,16 @@
 ﻿@model IEnumerable<Restaurant_Amb_1.Category_Tbl>
 
-@{
-    ViewBag.Title = "Index";
+@section banner {
+    <div class="bannerAdmin">
+        <div class="container">
+            <div class="row">
+            </div>
+        </div>
+    </div>
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -53,11 +55,14 @@
             @Html.DisplayFor(modelItem => item.updateddate)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.categoryid }) |
-            @Html.ActionLink("Details", "Details", new { id=item.categoryid }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.categoryid })
+            @Html.ActionLink("Edit", "Edit", new { id = item.categoryid }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.categoryid }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.categoryid }, new { @class = "btn btn-primary" })
         </td>
     </tr>
 }
 
 </table>
+<p>
+    @Html.ActionLink("Create New", "Create", new { @class = "btn btn-primary" })
+</p>

@@ -1,9 +1,12 @@
 ﻿@model Restaurant_Amb_1.Pickup_Tbl
-
-@{
-    ViewBag.Title = "Details";
+@section banner {
+    <div class="bannerAdmin">
+        <div class="container">
+            <div class="row">
+            </div>
+        </div>
+    </div>
 }
-
 <h2>Details</h2>
 
 <div>
@@ -40,14 +43,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.storecontact2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.storecontact3)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.storecontact3)
         </dd>
 
         <dt>

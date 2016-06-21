@@ -184,6 +184,9 @@
     <Compile Include="HomeDelivery_Tbl.cs">
       <DependentUpon>RestaurantSQLDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Itemtype_Tbl.cs">
+      <DependentUpon>RestaurantSQLDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Item_Tbl.cs">
       <DependentUpon>RestaurantSQLDB.tt</DependentUpon>
     </Compile>
