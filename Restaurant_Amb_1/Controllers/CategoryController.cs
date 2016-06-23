@@ -9,12 +9,14 @@ using System.Web;
 using System.Web.Mvc;
 using Restaurant_Amb_1;
 
+
 namespace Restaurant_Amb_1.Controllers
 {
     public class CategoryController : Controller
     {
         private HotTouchRestEntities db = new HotTouchRestEntities();
 
+        
         // GET: /Default1/
         public async Task<ActionResult> Index()
         {
@@ -49,7 +51,7 @@ namespace Restaurant_Amb_1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include="categoryid,categoryname,categorydesc,createdby,createddate,updatedby,updateddate")] Category_Tbl category_tbl)
         {
-            if (ModelState.IsValid)
+            if(ModelState.IsValid)
             {
                 db.Category_Tbl.Add(category_tbl);
                 await db.SaveChangesAsync();

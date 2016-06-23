@@ -36,8 +36,16 @@
             </div>
         </div>
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.createdby, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.createdby)
+                @Html.ValidationMessageFor(model => model.createdby)
+            </div>
+        </div>*@
+
+        <div class="form-group">
+            @*@Html.DropDownList("Created By",(IEnumerable<SelectListItem>)ViewBag.country,"Select User")*@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.createdby)
                 @Html.ValidationMessageFor(model => model.createdby)

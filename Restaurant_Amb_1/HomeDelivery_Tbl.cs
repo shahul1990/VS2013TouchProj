@@ -11,15 +11,25 @@ namespace Restaurant_Amb_1
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class HomeDelivery_Tbl
     {
         public int homdelid { get; set; }
+        [Required, DisplayName("Location")]
         public string homdellocation { get; set; }
+        [Required, DisplayName("City")]
         public string homdelcity { get; set; }
+        [Required, DisplayName("Created By")]
         public string createdby { get; set; }
+        [Required, DisplayName("Created Date")]
+        [DataType(DataType.Date)]
         public System.DateTime createddate { get; set; }
+        [Required, DisplayName("Updated By")]
         public string updatedby { get; set; }
+        [Required, DisplayName("Updated Date")]
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> updateddate { get; set; }
     }
 }

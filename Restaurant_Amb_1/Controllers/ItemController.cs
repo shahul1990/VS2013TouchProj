@@ -19,9 +19,7 @@ namespace Restaurant_Amb_1.Controllers
         // GET: /Item/
         public async Task<ActionResult> Index()
         {
-            ViewBag.CatName = db.Category_Tbl.ToList();
-            return View(await db.Item_Tbl.ToListAsync());
-            
+            return View(await db.Item_Tbl.ToListAsync());   
         }
 
         // GET: /Item/Details/5
@@ -53,7 +51,6 @@ namespace Restaurant_Amb_1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include="itemid,iname,idesc,itype,iimage,iprice,icategory,createdby,createddate,updatedby,updateddate")] Item_Tbl item_tbl)
         {
-            var categrory = db.Category_Tbl.Include(a => a.categoryname);
             if (ModelState.IsValid)
             {
                 db.Item_Tbl.Add(item_tbl);
@@ -130,6 +127,30 @@ namespace Restaurant_Amb_1.Controllers
             base.Dispose(disposing);
         }
 
-        
+        //++++++++++++++++++++++++++++++++++++=
+
+        public ActionResult FileUpload(HttpPostedFileBase file)
+        {
+            if (file != null)
+            {
+                string pic = System.IO.Path.GetFileName(file.FileName);
+                string path = System.IO.Path.Combine(
+                                       Server.MapPath("~/Content/Upload/"), pic);
+                // file is uploaded
+                file.SaveAs(path);
+
+                // save the image path path to the database or you can send image
+                // directly to database
+                // in-case if you want to store byte[] ie. for DB
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    file.InputStream.CopyTo(ms);
+                    byte[] array = ms.GetBuffer();
+                }
+
+            }
+            // after successfully uploading redirect the user
+            return RedirectToAction("Index", "Admin");
+        }
     }
 }

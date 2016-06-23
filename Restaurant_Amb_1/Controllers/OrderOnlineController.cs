@@ -10,7 +10,7 @@ namespace Restaurant_Amb_1.Views.OrderOnline
     {
         //
         // GET: /OrderOnline/
-        public ActionResult area()
+        public ActionResult Index()
         {
             return View();
         }

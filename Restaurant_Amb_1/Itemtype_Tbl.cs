@@ -11,14 +11,22 @@ namespace Restaurant_Amb_1
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Itemtype_Tbl
     {
         public int ItemTypeId { get; set; }
+        [Required, DisplayName("Item Name")]
         public string Type { get; set; }
+        [Required, DisplayName("Created By")]
         public string Createby { get; set; }
+        [Required, DisplayName("Created Date")]
         public System.DateTime createddate { get; set; }
+        [DisplayName("Updated By")]
         public string updatedby { get; set; }
+        [DisplayName("Updated Date")]
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> upadateddate { get; set; }
     }
 }

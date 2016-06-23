@@ -19,7 +19,7 @@ namespace Restaurant_Amb_1
         public int categoryid { get; set; }
         [Required, DisplayName("Name")]
         public string categoryname { get; set; }
-        [Required, DisplayName("Description")]
+        [DisplayName("Description")]
         public string categorydesc { get; set; }
         [Required, DisplayName("Created By")]
         public string createdby { get; set; }

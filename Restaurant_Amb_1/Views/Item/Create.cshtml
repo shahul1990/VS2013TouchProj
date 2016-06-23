@@ -57,10 +57,30 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.iimage, "Image :", new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @using (Html.BeginForm("Create", "Content", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    @using (Html.BeginForm("FileUpload", "Home", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+                    {
+                        <label for="file">Upload Image:</label>
+                        <input type="file" name="file" id="file" style="width: 100%;" />
+                        <input type="submit" value="Upload" class="submit" />
+                    }
+
+                    @*@using (Html.BeginForm("Create", "Content", FormMethod.Post, new { enctype = "multipart/form-data" }))
                     {
                         <input type="file" name="ImageData" id="ImageData" onchange="fileCheck(this);" />
-                    }
+                    }*@
+                    @*@using (Html.BeginForm("UploadImages", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="row">
+            <span class="span4">
+                <input type="file" name="uploadImages" multiple="multiple" class="input-files" />
+            </span>
+            <br/>
+            <span class="span2">
+                <input type="submit" name="button" value="Upload" class="btn btn-primary btn-sm btn-upload" />
+            </span>
+        </div>
+    }*@
                 </div>
             </div>
 
@@ -73,7 +93,7 @@
             </div>
             
             <div class="form-group">
-                @*@Html.LabelFor(model => model.icategory), "Category :", new { @class = "control-label col-md-2" })*@
+                @Html.LabelFor(model => model.icategory, "Category :", new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.icategory)
                     @Html.ValidationMessageFor(model => model.icategory)

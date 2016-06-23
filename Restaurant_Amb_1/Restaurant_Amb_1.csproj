@@ -174,7 +174,6 @@
     <Compile Include="Controllers\HomeDeliveryController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\PickupController.cs" />
-    <Compile Include="Controllers\testController.cs" />
     <Compile Include="Employee_Tbl.cs">
       <DependentUpon>RestaurantSQLDB.tt</DependentUpon>
     </Compile>
@@ -400,7 +399,7 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\OrderOnline\area.cshtml" />
+    <Content Include="Views\OrderOnline\Index.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Category\Create.cshtml" />
     <Content Include="Views\Category\Delete.cshtml" />
