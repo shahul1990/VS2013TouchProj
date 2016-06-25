@@ -11,28 +11,17 @@ namespace Restaurant_Amb_1
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class Employee_Tbl
     {
         public int empid { get; set; }
-        [Required,DisplayName("Employee Name")]
         public string empname { get; set; }
-        [Required, DisplayName("User Name")]
         public string empusername { get; set; }
-        [Required, DisplayName("Password")]
         public string emppassword { get; set; }
-        [Required, DisplayName("Confirm Password")]
         public string empconfpassword { get; set; }
-        [Required, DisplayName("Contact No")]
         public string empcontactno { get; set; }
-        [DisplayName("Email ID")]
         public string empmailid { get; set; }
-        [DisplayName("Address")]
         public string empaddress { get; set; }
-        [DisplayName("Date of Joining")]
-        [DataType(DataType.Date)]
         public Nullable<System.DateTime> dateofjoining { get; set; }
     }
 }

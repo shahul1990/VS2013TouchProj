@@ -157,14 +157,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin_Tbl.cs">
-      <DependentUpon>RestaurantSQLDB.tt</DependentUpon>
+      <DependentUpon>RestaurantDB.tt</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Category_Tbl.cs">
-      <DependentUpon>RestaurantSQLDB.tt</DependentUpon>
+      <DependentUpon>RestaurantDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
@@ -175,41 +175,40 @@
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\PickupController.cs" />
     <Compile Include="Employee_Tbl.cs">
-      <DependentUpon>RestaurantSQLDB.tt</DependentUpon>
+      <DependentUpon>RestaurantDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HomeDelivery_Tbl.cs">
-      <DependentUpon>RestaurantSQLDB.tt</DependentUpon>
+      <DependentUpon>RestaurantDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Itemtype_Tbl.cs">
-      <DependentUpon>RestaurantSQLDB.tt</DependentUpon>
+      <DependentUpon>RestaurantDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Item_Tbl.cs">
-      <DependentUpon>RestaurantSQLDB.tt</DependentUpon>
+      <DependentUpon>RestaurantDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Pickup_Tbl.cs">
-      <DependentUpon>RestaurantSQLDB.tt</DependentUpon>
+      <DependentUpon>RestaurantDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RestaurantSQLDB.Context.cs" />
-    <Compile Include="RestaurantSQLDB.cs" />
-    <Compile Include="RestaurantSQLDB.Designer.cs">
-      <DependentUpon>RestaurantSQLDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RestaurantSQLDB1.cs">
+    <Compile Include="RestaurantDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RestaurantSQLDB.tt</DependentUpon>
+      <DependentUpon>RestaurantDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="RestaurantSQLDB1.Designer.cs">
+    <Compile Include="RestaurantDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RestaurantSQLDB.edmx</DependentUpon>
+      <DependentUpon>RestaurantDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RestaurantDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RestaurantDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="Controllers\OrderOnlineController.cs" />
@@ -349,18 +348,24 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="RestaurantSQLDB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>RestaurantSQLDB1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="RestaurantSQLDB.edmx.diagram">
-      <DependentUpon>RestaurantSQLDB.edmx</DependentUpon>
-    </Content>
-    <Content Include="RestaurantSQLDB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RestaurantSQLDB1.cs</LastGenOutput>
-    </Content>
     <Content Include="bin\Restaurant_Amb_1.dll.config" />
+    <EntityDeploy Include="RestaurantDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RestaurantDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="RestaurantDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RestaurantDB.edmx</DependentUpon>
+      <LastGenOutput>RestaurantDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="RestaurantDB.edmx.diagram">
+      <DependentUpon>RestaurantDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="RestaurantDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RestaurantDB.edmx</DependentUpon>
+      <LastGenOutput>RestaurantDB.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -427,7 +432,6 @@
     <Content Include="Views\Pickup\Edit.cshtml" />
     <Content Include="Views\Pickup\Index.cshtml" />
     <Content Include="Views\Home\Menu.cshtml" />
-    <Content Include="Views\test\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -14,7 +14,7 @@ namespace Restaurant_Amb_1.Controllers
 {
     public class CategoryController : Controller
     {
-        private HotTouchRestEntities db = new HotTouchRestEntities();
+        private HotTouchRestEntities2 db = new HotTouchRestEntities2();
 
         
         // GET: /Default1/
@@ -57,7 +57,6 @@ namespace Restaurant_Amb_1.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-
             return View(category_tbl);
         }
 

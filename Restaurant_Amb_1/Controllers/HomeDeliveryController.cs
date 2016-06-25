@@ -13,7 +13,7 @@ namespace Restaurant_Amb_1.Controllers
 {
     public class HomeDeliveryController : Controller
     {
-        private HotTouchRestEntities db = new HotTouchRestEntities();
+        private HotTouchRestEntities2 db = new HotTouchRestEntities2();
 
         // GET: /HomeDelivery/
         public async Task<ActionResult> Index()

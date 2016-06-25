@@ -8,7 +8,8 @@
         </div>
     </div>
 }
-<h2>Create</h2>
+<h2>Category Records</h2>
+<div class="barLine"></div>
 
 
 @using (Html.BeginForm()) 
@@ -16,8 +17,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Category_Tbl</h4>
-        <hr />
+   
         @Html.ValidationSummary(true)
 
         <div class="form-group">
@@ -36,31 +36,29 @@
             </div>
         </div>
 
-        @*<div class="form-group">
+        <div class="form-group">
             @Html.LabelFor(model => model.createdby, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.createdby)
                 @Html.ValidationMessageFor(model => model.createdby)
             </div>
-        </div>*@
-
-        <div class="form-group">
-            @*@Html.DropDownList("Created By",(IEnumerable<SelectListItem>)ViewBag.country,"Select User")*@
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.createdby)
-                @Html.ValidationMessageFor(model => model.createdby)
-            </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.createddate, new { @class = "control-label col-md-2" })
+            
+            @Html.LabelFor(model => model.createddate, new{ @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.createddate)
+                @Html.EditorFor(model => model.createddate, new { @class = "datepicker" })
                 @Html.ValidationMessageFor(model => model.createddate)
+                <script>
+                    $(function () {
+                        $("#datepicker").datepicker();
+                    });
+                </script>
             </div>
         </div>
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.updatedby, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.updatedby)
@@ -74,7 +72,7 @@
                 @Html.EditorFor(model => model.updateddate)
                 @Html.ValidationMessageFor(model => model.updateddate)
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

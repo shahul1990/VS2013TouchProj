@@ -19,25 +19,23 @@ namespace Restaurant_Amb_1
         public int itemid { get; set; }
         [Required, DisplayName("Item Name")]
         public string iname { get; set; }
-        [DisplayName("Description")]
+        [Required, DisplayName("Description")]
         public string idesc { get; set; }
-        [Required, DisplayName("Type")]
+        [Required, DisplayName("Item Type")]
         public string itype { get; set; }
-        [Required, DisplayName("Image")]
+        [DisplayName("Item Image")]
         public byte[] iimage { get; set; }
         [Required, DisplayName("Price")]
         public decimal iprice { get; set; }
         [Required, DisplayName("Category")]
         public string icategory { get; set; }
         [Required, DisplayName("Created By")]
-        public String createdby { get; set; }
+        public string createdby { get; set; }
         [Required, DisplayName("Created Date")]
-        [DataType(DataType.Date)]
-        public string createddate { get; set; }
+        public System.DateTime createddate { get; set; }
         [DisplayName("Updated By")]
         public string updatedby { get; set; }
-        [DisplayName("Updated Date")]
-        [DataType(DataType.Date)]
+        [DisplayName("Update Date")]
         public Nullable<System.DateTime> updateddate { get; set; }
     }
 }

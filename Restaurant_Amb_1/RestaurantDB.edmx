@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="HotTouchRestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="HotTouchRestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admin_Tbl">
           <Key>
             <PropertyRef Name="id" />
@@ -105,10 +105,22 @@
           <EntitySet Name="Itemtype_Tbl" EntityType="Self.Itemtype_Tbl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pickup_Tbl" EntityType="Self.Pickup_Tbl" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HotTouchRestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Admin_Tbl">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="confirmpassword" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="contactno" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="Category_Tbl">
           <Key>
             <PropertyRef Name="categoryid" />
@@ -163,6 +175,17 @@
           <Property Name="updatedby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="updateddate" Type="DateTime" Precision="3" />
         </EntityType>
+        <EntityType Name="Itemtype_Tbl">
+          <Key>
+            <PropertyRef Name="ItemTypeId" />
+          </Key>
+          <Property Name="ItemTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Createby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="updatedby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="upadateddate" Type="DateTime" Precision="0" />
+        </EntityType>
         <EntityType Name="Pickup_Tbl">
           <Key>
             <PropertyRef Name="storeid" />
@@ -178,43 +201,33 @@
           <Property Name="updatedby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="updateddate" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityContainer Name="HotTouchRestEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="HotTouchRestEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admin_Tbl" EntityType="Self.Admin_Tbl" />
           <EntitySet Name="Category_Tbl" EntityType="Self.Category_Tbl" />
           <EntitySet Name="Employee_Tbl" EntityType="Self.Employee_Tbl" />
           <EntitySet Name="HomeDelivery_Tbl" EntityType="Self.HomeDelivery_Tbl" />
           <EntitySet Name="Item_Tbl" EntityType="Self.Item_Tbl" />
+          <EntitySet Name="Itemtype_Tbl" EntityType="Self.Itemtype_Tbl" />
           <EntitySet Name="Pickup_Tbl" EntityType="Self.Pickup_Tbl" />
-          <EntitySet Name="Itemtype_Tbl" EntityType="HotTouchRestModel.Itemtype_Tbl" />
-          <EntitySet Name="Admin_Tbl" EntityType="HotTouchRestModel.Admin_Tbl" />
         </EntityContainer>
-        <EntityType Name="Itemtype_Tbl">
-          <Key>
-            <PropertyRef Name="ItemTypeId" />
-          </Key>
-          <Property Name="ItemTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Type" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Createby" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="createddate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="updatedby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="upadateddate" Type="DateTime" Precision="0" />
-        </EntityType>
-        <EntityType Name="Admin_Tbl">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="username" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="password" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="confirmpassword" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="contactno" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="HotTouchRestModelStoreContainer" CdmEntityContainer="HotTouchRestEntities">
+        <EntityContainerMapping StorageEntityContainer="HotTouchRestModelStoreContainer" CdmEntityContainer="HotTouchRestEntities2">
+          <EntitySetMapping Name="Admin_Tbl">
+            <EntityTypeMapping TypeName="HotTouchRestModel.Admin_Tbl">
+              <MappingFragment StoreEntitySet="Admin_Tbl">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="confirmpassword" ColumnName="confirmpassword" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="contactno" ColumnName="contactno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Category_Tbl">
             <EntityTypeMapping TypeName="HotTouchRestModel.Category_Tbl">
               <MappingFragment StoreEntitySet="Category_Tbl">
@@ -273,6 +286,18 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Itemtype_Tbl">
+            <EntityTypeMapping TypeName="HotTouchRestModel.Itemtype_Tbl">
+              <MappingFragment StoreEntitySet="Itemtype_Tbl">
+                <ScalarProperty Name="ItemTypeId" ColumnName="ItemTypeId" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Createby" ColumnName="Createby" />
+                <ScalarProperty Name="createddate" ColumnName="createddate" />
+                <ScalarProperty Name="updatedby" ColumnName="updatedby" />
+                <ScalarProperty Name="upadateddate" ColumnName="upadateddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Pickup_Tbl">
             <EntityTypeMapping TypeName="HotTouchRestModel.Pickup_Tbl">
               <MappingFragment StoreEntitySet="Pickup_Tbl">
@@ -286,30 +311,6 @@
                 <ScalarProperty Name="createddate" ColumnName="createddate" />
                 <ScalarProperty Name="updatedby" ColumnName="updatedby" />
                 <ScalarProperty Name="updateddate" ColumnName="updateddate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Itemtype_Tbl">
-            <EntityTypeMapping TypeName="HotTouchRestModel.Itemtype_Tbl">
-              <MappingFragment StoreEntitySet="Itemtype_Tbl">
-                <ScalarProperty Name="upadateddate" ColumnName="upadateddate" />
-                <ScalarProperty Name="updatedby" ColumnName="updatedby" />
-                <ScalarProperty Name="createddate" ColumnName="createddate" />
-                <ScalarProperty Name="Createby" ColumnName="Createby" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="ItemTypeId" ColumnName="ItemTypeId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Admin_Tbl">
-            <EntityTypeMapping TypeName="HotTouchRestModel.Admin_Tbl">
-              <MappingFragment StoreEntitySet="Admin_Tbl">
-                <ScalarProperty Name="contactno" ColumnName="contactno" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="confirmpassword" ColumnName="confirmpassword" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="username" ColumnName="username" />
-                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

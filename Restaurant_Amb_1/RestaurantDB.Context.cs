@@ -13,10 +13,10 @@ namespace Restaurant_Amb_1
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HotTouchRestEntities : DbContext
+    public partial class HotTouchRestEntities2 : DbContext
     {
-        public HotTouchRestEntities()
-            : base("name=HotTouchRestEntities")
+        public HotTouchRestEntities2()
+            : base("name=HotTouchRestEntities2")
         {
         }
     
@@ -25,11 +25,12 @@ namespace Restaurant_Amb_1
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Admin_Tbl> Admin_Tbl { get; set; }
         public virtual DbSet<Category_Tbl> Category_Tbl { get; set; }
         public virtual DbSet<Employee_Tbl> Employee_Tbl { get; set; }
         public virtual DbSet<HomeDelivery_Tbl> HomeDelivery_Tbl { get; set; }
         public virtual DbSet<Item_Tbl> Item_Tbl { get; set; }
+        public virtual DbSet<Itemtype_Tbl> Itemtype_Tbl { get; set; }
         public virtual DbSet<Pickup_Tbl> Pickup_Tbl { get; set; }
-        public virtual DbSet<Admin_Tbl> Admin_Tbl { get; set; }
     }
 }

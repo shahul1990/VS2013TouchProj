@@ -11,17 +11,12 @@ namespace Restaurant_Amb_1
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel;
-
+    
     public partial class Admin_Tbl
     {
         public int id { get; set; }
-        
         public string username { get; set; }
-        
         public string password { get; set; }
-        
         public string confirmpassword { get; set; }
         public string email { get; set; }
         public string contactno { get; set; }

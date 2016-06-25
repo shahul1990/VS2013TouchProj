@@ -14,7 +14,7 @@ namespace Restaurant_Amb_1.Controllers
 {
     public class ItemController : Controller
     {
-        private HotTouchRestEntities db = new HotTouchRestEntities();
+        private HotTouchRestEntities2 db = new HotTouchRestEntities2();
 
         // GET: /Item/
         public async Task<ActionResult> Index()
