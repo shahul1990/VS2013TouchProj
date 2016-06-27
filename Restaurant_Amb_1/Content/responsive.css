@@ -23,8 +23,8 @@
    .navigation li a {padding:5px 5px;}
    .container .jumbotron, .container-fluid .jumbotron {padding:20px 25px;}
     .contactMap iframe {height:585px;}
-    .bannerInner {max-height:165px; height:165px;}
-    .bannerInner h2 {margin-top:90px;}
+    .bannerInner, .bannerAdmin, .bannerOrder {max-height:165px; height:165px;}
+    .bannerInner h2, .bannerAdmin h2, .bannerOrder h2 {margin-top:90px;}
     .banner {max-height:300px; height:300px;}
     .banner h2 {margin-top:110px;}
 }
@@ -42,10 +42,9 @@
    .navigation > li {display:block; border-left:none; padding:2px 0px; float:none; left:0;}
    .navigation li a { padding: 5px 20px 5px 20px; }
    .banner { height:300px; max-height:300px; padding-top:10px;}
-   .bannerInner { height:150px; max-height:150px; padding-top:10px;}
-   .banner .bannerBg {width:90%;}
+   .bannerInner, .bannerAdmin, .bannerOrder { height:150px; max-height:150px; padding-top:10px;}
    .banner h2 {font-size:24px; margin-top:100px;}
-   .bannerInner h2 {font-size:22px; margin-top:75px;}
+   .bannerInner h2, .bannerAdmin h2, .bannerOrder h2 {font-size:22px; margin-top:75px;}
    .aboutImg {float:none; width:100%; margin:0px 0px 30px;}
    .container .jumbotron, .container-fluid .jumbotron {padding:20px;}
    .contactMap {margin-top:15px; padding-top:25px; border-top:1px solid #ccc;}

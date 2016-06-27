@@ -268,7 +268,6 @@
     <Content Include="bin\System.Web.WebPages.xml" />
     <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\Copy of Site.css" />
     <Content Include="Content\Images\arrow.png" />
     <Content Include="Content\Images\bannerBg.jpg" />
     <Content Include="Content\Images\bannerBg2.jpg" />
