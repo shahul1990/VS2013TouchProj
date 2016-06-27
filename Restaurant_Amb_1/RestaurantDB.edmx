@@ -120,6 +120,10 @@
           <Property Name="confirmpassword" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="contactno" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Item_Tbl" Relationship="HotTouchRestModel.Admin_TblItem_Tbl" FromRole="Admin_Tbl" ToRole="Item_Tbl" />
+          <NavigationProperty Name="Category_Tbl" Relationship="HotTouchRestModel.Admin_TblCategory_Tbl" FromRole="Admin_Tbl" ToRole="Category_Tbl" />
+          <NavigationProperty Name="Employee_Tbl" Relationship="HotTouchRestModel.Admin_TblEmployee_Tbl" FromRole="Admin_Tbl" ToRole="Employee_Tbl" />
+          <NavigationProperty Name="Itemtype_Tbl" Relationship="HotTouchRestModel.Admin_TblItemtype_Tbl" FromRole="Admin_Tbl" ToRole="Itemtype_Tbl" />
         </EntityType>
         <EntityType Name="Category_Tbl">
           <Key>
@@ -132,6 +136,12 @@
           <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="updatedby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="updateddate" Type="DateTime" Precision="3" />
+          <Property Name="Item_Tbl_itemid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Item_Tbl" Relationship="HotTouchRestModel.Category_TblItem_Tbl" FromRole="Category_Tbl" ToRole="Item_Tbl" />
+          <NavigationProperty Name="Itemtype_Tbl" Relationship="HotTouchRestModel.Itemtype_TblCategory_Tbl" FromRole="Category_Tbl" ToRole="Itemtype_Tbl" />
+          <Property Name="Itemtype_TblItemTypeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Admin_Tbl" Relationship="HotTouchRestModel.Admin_TblCategory_Tbl" FromRole="Category_Tbl" ToRole="Admin_Tbl" />
+          <Property Name="Admin_Tbl_id" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Employee_Tbl">
           <Key>
@@ -146,6 +156,8 @@
           <Property Name="empmailid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="empaddress" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="dateofjoining" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Admin_Tbl" Relationship="HotTouchRestModel.Admin_TblEmployee_Tbl" FromRole="Employee_Tbl" ToRole="Admin_Tbl" />
+          <Property Name="Admin_Tbl_id" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="HomeDelivery_Tbl">
           <Key>
@@ -174,6 +186,13 @@
           <Property Name="createddate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="updatedby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="updateddate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Category_Tbl" Relationship="HotTouchRestModel.Category_TblItem_Tbl" FromRole="Item_Tbl" ToRole="Category_Tbl" />
+          <Property Name="Category_Tbl_categoryid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Itemtype_Tbl" Relationship="HotTouchRestModel.Itemtype_TblItem_Tbl" FromRole="Item_Tbl" ToRole="Itemtype_Tbl" />
+          <Property Name="Itemtype_TblItemTypeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Admin_Tbl" Relationship="HotTouchRestModel.Admin_TblItem_Tbl" FromRole="Item_Tbl" ToRole="Admin_Tbl" />
+          <Property Name="Admin_Tbl_id" Type="Int32" Nullable="false" />
+          <Property Name="Admin_Tbl_id1" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Itemtype_Tbl">
           <Key>
@@ -185,6 +204,12 @@
           <Property Name="createddate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="updatedby" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="upadateddate" Type="DateTime" Precision="0" />
+          <Property Name="Category_Tbl_categoryid" Type="Int32" Nullable="false" />
+          <Property Name="Item_Tbl_itemid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Item_Tbl" Relationship="HotTouchRestModel.Itemtype_TblItem_Tbl" FromRole="Itemtype_Tbl" ToRole="Item_Tbl" />
+          <NavigationProperty Name="Category_Tbl" Relationship="HotTouchRestModel.Itemtype_TblCategory_Tbl" FromRole="Itemtype_Tbl" ToRole="Category_Tbl" />
+          <NavigationProperty Name="Admin_Tbl" Relationship="HotTouchRestModel.Admin_TblItemtype_Tbl" FromRole="Itemtype_Tbl" ToRole="Admin_Tbl" />
+          <Property Name="Admin_Tbl_id" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Pickup_Tbl">
           <Key>
@@ -209,7 +234,119 @@
           <EntitySet Name="Item_Tbl" EntityType="Self.Item_Tbl" />
           <EntitySet Name="Itemtype_Tbl" EntityType="Self.Itemtype_Tbl" />
           <EntitySet Name="Pickup_Tbl" EntityType="Self.Pickup_Tbl" />
+          <AssociationSet Name="Category_TblItem_Tbl" Association="HotTouchRestModel.Category_TblItem_Tbl">
+            <End Role="Category_Tbl" EntitySet="Category_Tbl" />
+            <End Role="Item_Tbl" EntitySet="Item_Tbl" />
+          </AssociationSet>
+          <AssociationSet Name="Itemtype_TblItem_Tbl" Association="HotTouchRestModel.Itemtype_TblItem_Tbl">
+            <End Role="Itemtype_Tbl" EntitySet="Itemtype_Tbl" />
+            <End Role="Item_Tbl" EntitySet="Item_Tbl" />
+          </AssociationSet>
+          <AssociationSet Name="Itemtype_TblCategory_Tbl" Association="HotTouchRestModel.Itemtype_TblCategory_Tbl">
+            <End Role="Itemtype_Tbl" EntitySet="Itemtype_Tbl" />
+            <End Role="Category_Tbl" EntitySet="Category_Tbl" />
+          </AssociationSet>
+          <AssociationSet Name="Admin_TblItem_Tbl" Association="HotTouchRestModel.Admin_TblItem_Tbl">
+            <End Role="Admin_Tbl" EntitySet="Admin_Tbl" />
+            <End Role="Item_Tbl" EntitySet="Item_Tbl" />
+          </AssociationSet>
+          <AssociationSet Name="Admin_TblCategory_Tbl" Association="HotTouchRestModel.Admin_TblCategory_Tbl">
+            <End Role="Admin_Tbl" EntitySet="Admin_Tbl" />
+            <End Role="Category_Tbl" EntitySet="Category_Tbl" />
+          </AssociationSet>
+          <AssociationSet Name="Admin_TblEmployee_Tbl" Association="HotTouchRestModel.Admin_TblEmployee_Tbl">
+            <End Role="Admin_Tbl" EntitySet="Admin_Tbl" />
+            <End Role="Employee_Tbl" EntitySet="Employee_Tbl" />
+          </AssociationSet>
+          <AssociationSet Name="Admin_TblItemtype_Tbl" Association="HotTouchRestModel.Admin_TblItemtype_Tbl">
+            <End Role="Admin_Tbl" EntitySet="Admin_Tbl" />
+            <End Role="Itemtype_Tbl" EntitySet="Itemtype_Tbl" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="Category_TblItem_Tbl">
+          <End Type="HotTouchRestModel.Category_Tbl" Role="Category_Tbl" Multiplicity="1" />
+          <End Type="HotTouchRestModel.Item_Tbl" Role="Item_Tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category_Tbl">
+              <PropertyRef Name="categoryid" />
+            </Principal>
+            <Dependent Role="Item_Tbl">
+              <PropertyRef Name="Category_Tbl_categoryid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Itemtype_TblItem_Tbl">
+          <End Type="HotTouchRestModel.Itemtype_Tbl" Role="Itemtype_Tbl" Multiplicity="1" />
+          <End Type="HotTouchRestModel.Item_Tbl" Role="Item_Tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Itemtype_Tbl">
+              <PropertyRef Name="ItemTypeId" />
+            </Principal>
+            <Dependent Role="Item_Tbl">
+              <PropertyRef Name="Itemtype_TblItemTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Itemtype_TblCategory_Tbl">
+          <End Type="HotTouchRestModel.Itemtype_Tbl" Role="Itemtype_Tbl" Multiplicity="1" />
+          <End Type="HotTouchRestModel.Category_Tbl" Role="Category_Tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Itemtype_Tbl">
+              <PropertyRef Name="ItemTypeId" />
+            </Principal>
+            <Dependent Role="Category_Tbl">
+              <PropertyRef Name="Itemtype_TblItemTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Admin_TblItem_Tbl">
+          <End Type="HotTouchRestModel.Admin_Tbl" Role="Admin_Tbl" Multiplicity="1" />
+          <End Type="HotTouchRestModel.Item_Tbl" Role="Item_Tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin_Tbl">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Item_Tbl">
+              <PropertyRef Name="Admin_Tbl_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Admin_TblCategory_Tbl">
+          <End Type="HotTouchRestModel.Admin_Tbl" Role="Admin_Tbl" Multiplicity="1" />
+          <End Type="HotTouchRestModel.Category_Tbl" Role="Category_Tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin_Tbl">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Category_Tbl">
+              <PropertyRef Name="Admin_Tbl_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Admin_TblEmployee_Tbl">
+          <End Type="HotTouchRestModel.Admin_Tbl" Role="Admin_Tbl" Multiplicity="1" />
+          <End Type="HotTouchRestModel.Employee_Tbl" Role="Employee_Tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin_Tbl">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Employee_Tbl">
+              <PropertyRef Name="Admin_Tbl_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Admin_TblItemtype_Tbl">
+          <End Type="HotTouchRestModel.Admin_Tbl" Role="Admin_Tbl" Multiplicity="1" />
+          <End Type="HotTouchRestModel.Itemtype_Tbl" Role="Itemtype_Tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin_Tbl">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Itemtype_Tbl">
+              <PropertyRef Name="Admin_Tbl_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

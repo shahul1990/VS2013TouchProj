@@ -18,7 +18,6 @@
         @Html.AntiForgeryToken()
 
         <div class="form-horizontal">
-            @*<h4>Item_Tbl</h4>*@
             <hr />
             @Html.ValidationSummary(true)
 
@@ -57,13 +56,17 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.iimage, "Image :", new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @using (Html.BeginForm("FileUpload", "Home", FormMethod.Post,
+                  @using (Html.BeginForm("Create", "Content", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="ImageData" id="ImageData" onchange="fileCheck(this);" />
+}
+                      @*@using (Html.BeginForm("FileUpload", "Home", FormMethod.Post,
                             new { enctype = "multipart/form-data" }))
                     {
                         <label for="file">Upload Image:</label>
                         <input type="file" name="file" id="file" style="width: 100%;" />
                         <input type="submit" value="Upload" class="submit" />
-                    }
+                    }*@
 
                     @*@using (Html.BeginForm("Create", "Content", FormMethod.Post, new { enctype = "multipart/form-data" }))
                     {

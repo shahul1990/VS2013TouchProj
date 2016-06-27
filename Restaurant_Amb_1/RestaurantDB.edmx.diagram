@@ -4,14 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7c052708fc174002bcc94bbfbcc4e303" Name="Diagram1">
-        <EntityTypeShape EntityType="HotTouchRestModel.Admin_Tbl" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HotTouchRestModel.Category_Tbl" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HotTouchRestModel.Employee_Tbl" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HotTouchRestModel.HomeDelivery_Tbl" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HotTouchRestModel.Item_Tbl" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HotTouchRestModel.Itemtype_Tbl" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HotTouchRestModel.Pickup_Tbl" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="7c052708fc174002bcc94bbfbcc4e303" Name="Diagram1" ZoomLevel="105">
+        <EntityTypeShape EntityType="HotTouchRestModel.Admin_Tbl" Width="1.5" PointX="4.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotTouchRestModel.Category_Tbl" Width="1.5" PointX="4.375" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotTouchRestModel.Employee_Tbl" Width="1.5" PointX="4.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotTouchRestModel.HomeDelivery_Tbl" Width="1.5" PointX="8" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotTouchRestModel.Item_Tbl" Width="1.5" PointX="0.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotTouchRestModel.Itemtype_Tbl" Width="1.5" PointX="0.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotTouchRestModel.Pickup_Tbl" Width="1.5" PointX="7.5" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="HotTouchRestModel.Category_TblItem_Tbl" />
+        <AssociationConnector Association="HotTouchRestModel.Itemtype_TblItem_Tbl" />
+        <AssociationConnector Association="HotTouchRestModel.Itemtype_TblCategory_Tbl" />
+        <AssociationConnector Association="HotTouchRestModel.Admin_TblItem_Tbl" />
+        <AssociationConnector Association="HotTouchRestModel.Admin_TblCategory_Tbl" />
+        <AssociationConnector Association="HotTouchRestModel.Admin_TblEmployee_Tbl" />
+        <AssociationConnector Association="HotTouchRestModel.Admin_TblItemtype_Tbl" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

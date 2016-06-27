@@ -11,31 +11,27 @@ namespace Restaurant_Amb_1
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Item_Tbl
     {
         public int itemid { get; set; }
-        [Required, DisplayName("Item Name")]
         public string iname { get; set; }
-        [Required, DisplayName("Description")]
         public string idesc { get; set; }
-        [Required, DisplayName("Item Type")]
         public string itype { get; set; }
-        [DisplayName("Item Image")]
         public byte[] iimage { get; set; }
-        [Required, DisplayName("Price")]
         public decimal iprice { get; set; }
-        [Required, DisplayName("Category")]
         public string icategory { get; set; }
-        [Required, DisplayName("Created By")]
         public string createdby { get; set; }
-        [Required, DisplayName("Created Date")]
         public System.DateTime createddate { get; set; }
-        [DisplayName("Updated By")]
         public string updatedby { get; set; }
-        [DisplayName("Update Date")]
         public Nullable<System.DateTime> updateddate { get; set; }
+        public int Category_Tbl_categoryid { get; set; }
+        public int Itemtype_TblItemTypeId { get; set; }
+        public int Admin_Tbl_id { get; set; }
+        public int Admin_Tbl_id1 { get; set; }
+    
+        public virtual Category_Tbl Category_Tbl { get; set; }
+        public virtual Itemtype_Tbl Itemtype_Tbl { get; set; }
+        public virtual Admin_Tbl Admin_Tbl { get; set; }
     }
 }

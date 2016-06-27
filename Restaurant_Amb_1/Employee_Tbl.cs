@@ -23,5 +23,8 @@ namespace Restaurant_Amb_1
         public string empmailid { get; set; }
         public string empaddress { get; set; }
         public Nullable<System.DateTime> dateofjoining { get; set; }
+        public int Admin_Tbl_id { get; set; }
+    
+        public virtual Admin_Tbl Admin_Tbl { get; set; }
     }
 }

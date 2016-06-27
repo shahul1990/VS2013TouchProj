@@ -14,11 +14,24 @@ namespace Restaurant_Amb_1
     
     public partial class Admin_Tbl
     {
+        public Admin_Tbl()
+        {
+            this.Item_Tbl = new HashSet<Item_Tbl>();
+            this.Category_Tbl = new HashSet<Category_Tbl>();
+            this.Employee_Tbl = new HashSet<Employee_Tbl>();
+            this.Itemtype_Tbl = new HashSet<Itemtype_Tbl>();
+        }
+    
         public int id { get; set; }
         public string username { get; set; }
         public string password { get; set; }
         public string confirmpassword { get; set; }
         public string email { get; set; }
         public string contactno { get; set; }
+    
+        public virtual ICollection<Item_Tbl> Item_Tbl { get; set; }
+        public virtual ICollection<Category_Tbl> Category_Tbl { get; set; }
+        public virtual ICollection<Employee_Tbl> Employee_Tbl { get; set; }
+        public virtual ICollection<Itemtype_Tbl> Itemtype_Tbl { get; set; }
     }
 }

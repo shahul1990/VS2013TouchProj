@@ -152,5 +152,19 @@ namespace Restaurant_Amb_1.Controllers
             // after successfully uploading redirect the user
             return RedirectToAction("Index", "Admin");
         }
+
+        //[Route("Create")]
+        //[HttpPost]
+        //public ActionResult Create(Item_Tbl model)
+        //{
+        //    HttpPostedFileBase file = Request.Files["ImageData"];
+        //    ContentRepository service = new ContentRepository();
+        //    int i = service.UploadImageInDataBase(file, model);
+        //    if (i == 1)
+        //    {
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(model);
+        //}
     }
 }

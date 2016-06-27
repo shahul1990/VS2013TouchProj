@@ -191,6 +191,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ItemModel.cs" />
     <Compile Include="Pickup_Tbl.cs">
       <DependentUpon>RestaurantDB.tt</DependentUpon>
     </Compile>
@@ -212,6 +213,7 @@
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="Controllers\OrderOnlineController.cs" />
+    <Compile Include="ViewModels\CategoryIndexVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Antlr3.Runtime.dll" />

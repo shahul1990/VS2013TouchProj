@@ -14,11 +14,24 @@ namespace Restaurant_Amb_1
     
     public partial class Itemtype_Tbl
     {
+        public Itemtype_Tbl()
+        {
+            this.Item_Tbl = new HashSet<Item_Tbl>();
+            this.Category_Tbl = new HashSet<Category_Tbl>();
+        }
+    
         public int ItemTypeId { get; set; }
         public string Type { get; set; }
         public string Createby { get; set; }
         public System.DateTime createddate { get; set; }
         public string updatedby { get; set; }
         public Nullable<System.DateTime> upadateddate { get; set; }
+        public int Category_Tbl_categoryid { get; set; }
+        public int Item_Tbl_itemid { get; set; }
+        public int Admin_Tbl_id { get; set; }
+    
+        public virtual ICollection<Item_Tbl> Item_Tbl { get; set; }
+        public virtual ICollection<Category_Tbl> Category_Tbl { get; set; }
+        public virtual Admin_Tbl Admin_Tbl { get; set; }
     }
 }
