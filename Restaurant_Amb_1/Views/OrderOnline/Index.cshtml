@@ -1,0 +1,61 @@
+﻿@using Restaurant_Amb_1.Models
+
+@section banner {
+    <div class="bannerOrder">
+        <div class="container">
+            <div class="row">
+                <h2>Our Taste and Service will reach your Expectation</h2>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <h2>Order Online</h2>
+    <div class="barLine"></div>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#"><span class="btn btn-sm btn-info">Login</span></a></li>
+                            <li><a href="#"><span class="btn btn-sm btn-warning">Sign Up</span></a></li>
+                            <li><a href="#"><span class="btn btn-sm btn-danger">Admin Login</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                @*<h2>Area Text</h2>*@
+            </div>
+        </nav>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="col-sm-3">
+        <div style="border:5px solid lightgrey;border-radius:2.5px;font-size:12px;">
+           @*@{
+               var category = ViewData["cat"];
+           }*@  
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="ordertypeselect" style="width: 450px;">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="#"><h4><span class="label label-default">Veg</span></h4></a></li>
+                <li><a href="#"><h4><span class="label label-danger">Non Veg</span></h4></a></li>
+                <li><a href="#"><h4><span class="label label-success">View Full Menu</span></h4></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-sm-3">
+            <div style="border:5px solid lightgrey;border-radius:2.5px;font-size:12px;">
+                <h4 style="margin-left:20px;">
+                <u><br/>Terms and Condition</u></h4>
+                <ul style="margin-left:20px;">
+                    <li>Orders received from online source will be followed by a confirmation call from our  executive and the order will only be confirmed after the call back from Customer Executive.</li>
+                    <li>We deliver within 5 KM radius of our store.</li>
+                    <li>Cash on delivery and 5% extra on , credit and debit accessible on request only.</li>
+                    <li> Service tax of 4.994% will be additional to total amount</li>
+                    <li>Minimum purchase order will be Rs 350</li>
+                </ul>
+            </div>
+        </div>
+</div>
