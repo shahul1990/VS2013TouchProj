@@ -1,6 +1,6 @@
-﻿@using Restaurant_Amb_1.Models
+﻿@*@using Restaurant_Amb_1.Models*@
 @{
-     Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Order Online";
 }
 @section banner {
     <div class="bannerOrder">
@@ -12,57 +12,276 @@
     </div>
 }
 
-<div class="col-md-12 col-sm-12 col-xs-12">
-    <h2>Order Online</h2>
-    <div class="barLine"></div>
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#"><span class="btn btn-sm btn-info">Login</span></a></li>
-                            <li><a href="#"><span class="btn btn-sm btn-warning">Sign Up</span></a></li>
-                            <li><a href="#"><span class="btn btn-sm btn-danger">Admin Login</span></a></li>
+<div id="api_foodon">
+    <div class="wrapper" id="menu-page">
+        <h2>Order Online</h2>
+        <div class="barLine"></div>
+        <!-- Filters -->
+        <div class="col-md-2 col-sm-4 col-xs-12" style="padding-left:0px;">
+            <div id="filters">
+
+                <div id="left-box">
+                    <div id="search_category">
+                        <h2>Select by Category</h2>
+                        <ul class="menu-category">
+
+                            <li>
+                                <a rel="group-112019942" class="category catActive" href="#">Iftar Box</a>
+
+                            </li>
+
+                            <li>
+                                <a rel="group-1368396831" class="category" href="#">Arabian</a>
+
+                                @*<ul style="display: none; margin: 0 0 0 15px; padding: 0; list-style-type: none;">
+
+
+                                                                       <li><a rel="group-1408587777" class="category" href="#">&gt; Arabian Gravies</a></li>
+
+
+
+                                                                       <li><a rel="group-1228259380" class="category" href="#">&gt; Arabian Rices</a></li>
+
+
+
+                                                                       <li><a rel="group-1380120670" class="category" href="#">&gt; Grills &amp; Barbeque</a></li>
+
+
+
+                                                                       <li><a rel="group-1393503321" class="category" href="#">&gt; Hummus &amp; Salads</a></li>
+
+
+
+                                                                       <li><a rel="group-1346957386" class="category" href="#">&gt; Tawa Kebabs</a></li>
+                                    </ul>*@
+
+                            </li>
+
+                            <li>
+                                <a rel="group-1327433692" class="category" href="#">Chinese</a>
+
+                                @*<ul style="display: none; margin: 0 0 0 15px; padding: 0; list-style-type: none;">
+
+                                                                       <li><a rel="group-1388796767" class="category" href="#">&gt; Chicken Gravies</a></li>
+
+
+
+                                                                       <li><a rel="group-1403357806" class="category" href="#">&gt; Chicken Starters</a></li>
+
+
+
+                                                                       <li><a rel="group-1271906017" class="category" href="#">&gt; Chinese Macaronies</a></li>
+
+
+
+                                                                       <li><a rel="group-1400527587" class="category" href="#">&gt; Fried Rices</a></li>
+
+
+
+                                                                       <li><a rel="group-1233381421" class="category" href="#">&gt; Lamb</a></li>
+
+
+
+                                                                       <li><a rel="group-1369809701" class="category" href="#">&gt; Noodles</a></li>
+
+
+
+                                                                       <li><a rel="group-1389267079" class="category" href="#">&gt; Olive Special Rices</a></li>
+
+
+
+                                                                       <li><a rel="group-1379335391" class="category" href="#">&gt; Seafood Dry / Gravies</a></li>
+
+
+
+                                                                       <li><a rel="group-1393409190" class="category" href="#">&gt; Seafood Starters</a></li>
+
+
+
+                                                                       <li><a rel="group-1231395019" class="category" href="#">&gt; Soups</a></li>
+
+
+
+                                                                       <li><a rel="group-1233083422" class="category" href="#">&gt; Veg Dry / Gravies</a></li>
+
+
+
+                                                                       <li><a rel="group-1341365349" class="category" href="#">&gt; Veg Starters</a></li>
+
+                                    </ul>*@
+
+                            </li>
+
+                            <li>
+                                <a rel="group-1265283353" class="category" href="#">Indian</a>
+
+                                @*<ul style="display: none; margin: 0 0 0 15px; padding: 0; list-style-type: none;">
+                                         <li><a rel="group-1311009220" class="category" href="#">&gt; Biryani &amp; Pulaos</a></li>
+
+
+
+                                                                  <li><a rel="group-1242547238" class="category" href="#">&gt; Chicken Main Course</a></li>
+
+
+
+                                                                  <li><a rel="group-1330681335" class="category" href="#">&gt; Egg Main Course</a></li>
+
+
+
+                                                                  <li><a rel="group-1392833977" class="category" href="#">&gt; Indian Breads</a></li>
+
+
+
+                                                                  <li><a rel="group-1406356309" class="category" href="#">&gt; Mutton Main Course</a></li>
+
+
+
+                                                                  <li><a rel="group-1352997753" class="category" href="#">&gt; Raita &amp; Papads</a></li>
+
+
+
+                                                                  <li><a rel="group-1261531650" class="category" href="#">&gt; Seafood Main Course</a></li>
+
+
+
+                                                                  <li><a rel="group-1343652976" class="category" href="#">&gt; Tandoori Starters</a></li>
+
+
+
+                                                                  <li><a rel="group-1360212559" class="category" href="#">&gt; Veg Main Course</a></li>
+
+                                    </ul>*@
+
+                            </li>
+
+                            <li>
+                                <a rel="group-1294625928" class="category" href="#">Snacks</a>
+
+                                @*<ul style="display: none; margin: 0 0 0 15px; padding: 0; list-style-type: none;">
+
+                                    <li><a rel="group-1341504077" class="category" href="#">&gt; Burgers</a></li>
+
+
+
+                                                                       <li><a rel="group-1262482475" class="category" href="#">&gt; Grilled Sandwiches</a></li>
+
+
+
+                                                                       <li><a rel="group-1225733729" class="category" href="#">&gt; Rolls</a></li>
+
+
+                                                                   </ul>*@
+
+                            </li>
+
+                            <li>
+                                <a rel="group-1255529213" class="category" href="#">Juices &amp; Desserts</a>
+
+                                @*<ul style="display: none; margin: 0 0 0 15px; padding: 0; list-style-type: none;">
+
+
+                                        <li><a rel="group-1333894654" class="category" href="#">&gt; Falooda</a></li>
+
+
+
+                                        <li><a rel="group-1221611040" class="category" href="#">&gt; Fresh Juices</a></li>
+
+
+
+                                        <li><a rel="group-1319454618" class="category" href="#">&gt; Fruit Creams</a></li>
+
+
+
+                                        <li><a rel="group-1351151054" class="category" href="#">&gt; Hot Beverages</a></li>
+
+
+
+                                        <li><a rel="group-1223874543" class="category" href="#">&gt; Ice Cream Milkshakes</a></li>
+
+
+
+                                        <li><a rel="group-1282036782" class="category" href="#">&gt; Ice Cream Scoops</a></li>
+
+
+
+                                        <li><a rel="group-1235647792" class="category" href="#">&gt; Lime Soda</a></li>
+
+
+
+                                        <li><a rel="group-1224382312" class="category" href="#">&gt; Milkshakes</a></li>
+
+
+
+                                        <li><a rel="group-1390265342" class="category" href="#">&gt; Soft Drinks</a></li>
+
+
+                                    </ul>*@
+
+                            </li>
+
                         </ul>
                     </div>
                 </div>
-                @*<h2>Area Text</h2>*@
-            </div>
-        </nav>
-</div>
-<div class="col-md-12 col-sm-12 col-xs-12">
-    <div class="col-sm-3">
-        <div style="border:5px solid lightgrey;border-radius:2.5px;font-size:12px;">
-           @*@{
-               var category = ViewData["cat"];
-           }*@  
-        </div>
-    </div>
-    <div class="col-sm-6">
-        <div class="ordertypeselect" style="width: 450px;">
-            <ul class="nav navbar-nav navbar-left">
-                <li><a href="#"><h4><span class="label label-default">Veg</span></h4></a></li>
-                <li><a href="#"><h4><span class="label label-danger">Non Veg</span></h4></a></li>
-                <li><a href="#"><h4><span class="label label-success">View Full Menu</span></h4></a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="col-sm-3">
-            <div style="border:5px solid lightgrey;border-radius:2.5px;font-size:12px;">
-                <h4 style="margin-left:20px;">
-                <u><br/>Terms and Condition</u></h4>
-                <ul style="margin-left:20px;">
-                    <li>Orders received from online source will be followed by a confirmation call from our  executive and the order will only be confirmed after the call back from Customer Executive.</li>
-                    <li>We deliver within 5 KM radius of our store.</li>
-                    <li>Cash on delivery and 5% extra on , credit and debit accessible on request only.</li>
-                    <li> Service tax of 4.994% will be additional to total amount</li>
-                    <li>Minimum purchase order will be Rs 350</li>
-                </ul>
             </div>
         </div>
-</div>
-<script type="text/javascript">
-    $(function () {
-        $('#menuOrder').addClass('active');
-    });
-</script>
+        <!-- //Filters -->
+
+        <div class="col-md-6 col-sm-8 col-xs-12"><div id="filter_holder" class="wrapper">
+    <div id="type_filter_inner">
+        <ul id="food-type-filter">
+            <li><a title="Click to view veg only menu" id="type-veg" class="food_type" rel="type-0" href="#">Veg</a></li>
+            <li><a title="Click to view non-veg only menu" id="type-nveg" class="food_type" rel="type-1" href="#">Non-Veg</a></li>
+            <li><a class="view_all" href="#">View Full Menu</a></li>
+
+        </ul>
+    </div>
+
+</div></div>
+
+        <div class="col-md-4 col-sm-12 col-xs-12" style="padding-right:0px;">
+            <div class="wrapper" id="shopping-cart-wrapper">
+
+                <div id="right-box" class="">
+                    <h1>Your Order</h1>
+                    <div style="width: 100%;" id="cart">
+
+                        <!--<p style="background: #FEF1BA; padding: 5px; font-size: 14px; clear: left;">Purchase for <strong>Rs.250</strong> and above and get <strong>FREE</strong> Potato Wedges.</p>-->
+
+                        <p id="min_order_warning" style="background: rgb(254, 241, 186) none repeat scroll 0% 0%; padding: 5px; font-size: 14px; clear: left;">Minimum order in this restaurant is <strong><span class="indian_rupee inr">A</span>400/-</strong> or more.</p>
+
+                        <table width="100%" cellspacing="0" cellpadding="0" id="order-cart">
+                            <tbody>
+
+
+                                <tr id="1387657733">
+                                    <td valign="middle" align="left" style="padding-right: 5px; vertical-align: middle; width: 15px;">
+
+                                        <img style="width: 10px;" alt="" src="//foodon.edlar.com/api/css/images/ico-non-veg.gif">
+
+                                    </td>
+                                    <td valign="middle" align="left" style="width: 200px; padding-right: 20px;" class="food-item-name">
+                                        <strong><span class="quantity">1</span> x</strong> Alfaham Dajaj (Half)
+
+
+                                    </td>
+                                    <td valign="middle" align="left" style="width: 40px;" class="food-item-price"><!--<img width="7" src="//foodon.edlar.com/api/css/images/indian_rupee.png" alt="">--><span class="indian_rupee inr">A</span>220</td>
+
+                                    <td valign="middle" align="center" class="food-item-update"><a title="Click to edit quantity" class="edit-item" href="1387657733"><img alt="" src="//foodon.edlar.com/api/css/images/ico-edit.png"></a></td>
+                                    <td valign="middle" align="left" class="food-item-delete"><a title="Delete this dish from your order" class="delete-from-cart" href="1387657733"><img width="12" height="12" alt="" src="//foodon.edlar.com/api/css/images/ico-remove.gif"></a></td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p style="display: none; margin: 10px auto 0px; font-size: small;" id="masala-empty-node" class="masala-empty-node"><strong>Please add items to your cart.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+                </div>
+
+            </div>
+            <script type="text/javascript">
+                $(function () {
+                    $('#menuOrder').addClass('active');
+                });
+            </script>

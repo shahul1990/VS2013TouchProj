@@ -11,7 +11,7 @@
         </div>
     </div>
 }
-<h2>Show Database value in DataTable</h2>
+@*<h2>Show Database value in DataTable</h2>
 <div>
     <div id="product" class="portfolioremove" data-option-key="filter">
         <h2> 
@@ -24,7 +24,7 @@
     </div>
 
 
-    @*@foreach (var item in ViewBag.userdetails)
+  @foreach (var item in ViewBag.userdetails)
     {
         <div class="col-md-3 col-sm-4 col-xs-12" data-category="@item.icategory">
             @item.iname
@@ -36,10 +36,207 @@
                 <img src="~/Content/Images/img2.jpg" />
             </div>
         </div>
-    }*@   
+    }  
+</div>*@
+
+<div class="content">
+    <h5>FOOD MENU</h5>
+    <dl class="group">
+        <dd>
+            <ul class="filter group">
+                <li class="all current"><a href="#">All</a></li>
+                <li class="starters"><a href="#">Starters</a></li>
+                <li class="chickenfriedstarter"><a href="#">Chicken Fried Starter</a></li>
+                <li class="soups"><a href="#">Soups</a></li>
+                <li class="thalappakattispecials"><a href="#">Thalappakatti Specials</a></li>
+                <li class="kebabs"><a href="#">Kebabs &amp; Barbeques</a></li>
+                <li class="biriyani"><a href="#">Biriyanis</a></li>
+                <li class="curries"><a href="#">Curries</a></li>
+                <li class="fish"><a href="#">Fish &amp; Prawns</a></li>
+                <li class="tawastarter"><a href="#">Tawa Starter</a></li>
+                <li class="desserts"><a href="#">Desserts</a></li>
+                <li class="chinese"><a href="#">Chinese</a></li>
+            </ul>
+        </dd>
+    </dl>
+    <div class="menubox" style="height: auto;">
+        <ul class="portfolio group" style="height: 1512px;">
+            <li data-type="kebabs" data-id="id-21" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/23.jpg" title="Afghani Kabab" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/23_thumb.jpg" style="opacity: 1;"></a>
+                <div class="caption">Afghani Kabab</div>
+            </li>
+            <li data-type="tawastarter" data-id="id-22" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/24.jpg" title="Butter fly Chcicken" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/24_thumb.jpg" style="opacity: 1;"></a>
+                <div class="caption">Butter fly Chicken</div>
+            </li>
+            <li data-type="kebabs" data-id="id-23" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/25.jpg" title="Chicken Sheesh Tawk" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/25_thumb.jpg" style="opacity: 1;"></a>
+                <div class="caption">Chicken Sheesh Tawk</div>
+            </li>
+            <li data-type="tawastarter" data-id="id-24" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/26.jpg" title="Kal Kozhi" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/26_thumb.jpg"></a>
+                <div class="caption">Kal Kozhi</div>
+            </li>
+            <li data-type="fish" data-id="id-25" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/27.jpg" title="Tawa Meen Roast" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/27_thumb.jpg"></a>
+                <div class="caption">Tawa Meen Roast</div>
+            </li>
+            <li data-type="kebabs" data-id="id-26" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/28.jpg" title="Barbeque Pomfret" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/28_thumb.jpg"></a>
+                <div class="caption">Barbeque Pomfret</div>
+            </li>
+            <li data-type="desserts" data-id="id-27" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/29.jpg" title="Colourful Dreams" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/29_thumb.jpg"></a>
+                <div class="caption">Colourful Dreams</div>
+            </li>
+            <li data-type="kebabs" data-id="id-28" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/22.jpg" title="Colour Barbeque with bone" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/22_thumb.jpg" style="opacity: 1;"></a>
+                <div class="caption">Colour Barbeque with bone</div>
+            </li>
+            <li data-type="kebabs" data-id="id-29" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/30.jpg" title="Pepper Barbeque" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/30_thumb.jpg" style="opacity: 1;"></a>
+                <div class="caption">Pepper Barbeque</div>
+            </li>
+            <li data-type="fish" data-id="id-29" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/31.jpg" title="Phuket Fish" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/31_thumb.jpg" style="opacity: 1;"></a>
+                <div class="caption">Phuket Fish</div>
+            </li>
+            <li data-type="desserts " data-id="id-29" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/32.jpg" title="Pudhsu kana pudhsu" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/32_thumb.jpg"></a>
+                <div class="caption">Pudhsu kana pudhsu</div>
+            </li>
+            <li data-type="kebabs" data-id="id-29" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/33.jpg" title="Raan" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/33_thumb.jpg"></a>
+                <div class="caption">Raan</div>
+            </li>
+            <li data-type="chickenfriedstarter" data-id="id-29" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/34.jpg" title="Thalappakatti Chicken Hot 2013" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/34_thumb.jpg"></a>
+                <div class="caption">Thalappakatti Chicken Hot 2013</div>
+            </li>
+            <li data-type="tawastarter" data-id="id-29" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/35.jpg" title="Chicken Leg Roast" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/35_thumb.jpg"></a>
+                <div class="caption">Chicken Leg Roast</div>
+            </li>
+            <li data-type="fish" data-id="id-29" class="item">
+                <a href="http://thalappakatti.com/public/img/promo/promo9.jpg" title="Eral Sukka" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/36_thumb.jpg"></a>
+                <div class="caption">Eral Sukka</div>
+            </li>
+            <li data-type="fish" data-id="id-29" class="item">
+                <a href="http://thalappakatti.com/public/img/promo/promo8.jpg" title="Fish Sukka" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/37_thumb.jpg"></a>
+                <div class="caption">Fish Sukka</div>
+            </li>
+            <li data-type="starters" data-id="id-29" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/38.jpg" title="Golden Fried Babycorn" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/38_thumb.jpg"></a>
+                <div class="caption">Golden Fried Babycorn</div>
+            </li>
+            <li data-type="curries" data-id="id-29" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/39.jpg" title="Kodaikanal Chicken Kolambu" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/39_thumb.jpg"></a>
+                <div class="caption">Kodaikanal Chicken Kolambu</div>
+            </li>
+            <li data-type="tawastarter" data-id="id-29" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/40.jpg" title="Pallipalayam Boneless Roast" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/40_thumb.jpg"></a>
+                <div class="caption">Pallipalayam Boneless Roast</div>
+            </li>
+            <li data-type="fish" data-id="id-29" class="item">
+                <a href="http://thalappakatti.com/public/img/promo/promo10.jpg" title="Pomfret Polichadu" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/41_thumb.jpg"></a>
+                <div class="caption">Pomfret Polichadu</div>
+            </li>
+            <li data-type="chickenfriedstarter" data-id="id-29" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/42.jpg" title="Thalappakatti 1965" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/42_thumb.jpg"></a>
+                <div class="caption">Thalappakatti 1965</div>
+            </li>
+            <li data-type="chinese" data-id="id-29" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/43.jpg" title="Thalappakatti Special Fried Rice" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/43_thumb.jpg"></a>
+                <div class="caption">Thalappakatti Special Fried Rice</div>
+            </li>
+            <li data-type="curries" data-id="id-29" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/44.jpg" title="Veg Jalfraize" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/44_thumb.jpg"></a>
+                <div class="caption">Veg Jalfraize</div>
+            </li>
+            <li data-type="soups" data-id="id-1" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/1.jpg" title="Aatukal Soup" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/1_thumb.jpg"></a>
+                <div class="caption">Aatukal Soup</div>
+            </li>
+            <li data-type="curries" data-id="id-2" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/2.jpg" title="" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/2_thumb.jpg"></a>
+                <div class="caption">Dindigul Chicken Masala</div>
+            </li>
+            <li data-type="curries" data-id="id-3" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/3.jpg" title="" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/3_thumb.jpg"></a>
+                <div class="caption">Thalappakatti Curry Chops Masala</div>
+            </li>
+            <li data-type="kebabs" data-id="id-4" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/4.jpg" title="" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/4_thumb.jpg"></a>
+                <div class="caption">Tandoori Veg Platter</div>
+            </li>
+            <li data-type="kebabs thalappakattispecials" data-id="id-5" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/5.jpg" title="BBQ Chicken" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/5_thumb.jpg"></a>
+                <div class="caption">BBQ Chicken</div>
+            </li>
+            <li data-type="curries" data-id="id-6" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/6.jpg" title="Thalappakatti Mutton Masala" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/6_thumb.jpg"></a>
+                <div class="caption">Thalappakatti Mutton Masala</div>
+            </li>
+            <li data-type="curries thalappakattispecials" data-id="id-7" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/7.jpg" title="Kattabomman Chicken Gravy" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/7_thumb.jpg"></a>
+                <div class="caption">Kattabomman Chicken Gravy</div>
+            </li>
+            <li data-type="desserts" data-id="id-8" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/8.jpg" title="Jigar Thanda" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/8_thumb.jpg"></a>
+                <div class="caption">Jigar Thanda</div>
+            </li>
+            <li data-type="thalappakattispecials thalappakattispecials" data-id="id-9" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/9.jpg" title="Thalappakatti Special Fried Chicken" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/9_thumb.jpg"></a>
+                <div class="caption">Thalappakatti Special Fried Chicken</div>
+            </li>
+            <li data-type="thalappakattispecials thalappakattispecials" data-id="id-10" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/10.jpg" title="Chicken Porchadu" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/2_thumb.jpg"></a>
+                <div class="caption">Chicken Porichadu</div>
+            </li>
+            <li data-type="thalappakattispecials" data-id="id-11" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/11.jpg" title="Dindigul Chilly Chicken" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/11_thumb.jpg"></a>
+                <div class="caption">Dindigul Chilly Chicken</div>
+            </li>
+            <li data-type="thalappakattispecials thalappakattispecials" data-id="id-12" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/12.jpg" title="Black Pepper Chicken" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/12_thumb.jpg"></a>
+                <div class="caption">Black Pepper Chicken</div>
+            </li>
+            <li data-type="biriyani thalappakattispecials" data-id="id-13" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/13.jpg" title="Chicken 65 Biriyani" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/13_thumb.jpg"></a>
+                <div class="caption">Chicken 65 Biriyani</div>
+            </li>
+            <li data-type="biriyani thalappakattispecials" data-id="id-14" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/14.jpg" title="Chicken Biriyani" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/14_thumb.jpg"></a>
+                <div class="caption">Chicken Biriyani</div>
+            </li>
+            <li data-type="biriyani thalappakattispecials" data-id="id-15" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/15.jpg" title="Mutton Biriyani" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/15_thumb.jpg"></a>
+                <div class="caption">Mutton Biriyani</div>
+            </li>
+            <li data-type="kebabs thalappakattispecials" data-id="id-16" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/16.jpg" title="Chicken Shawarma Kabab" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/16_thumb.jpg"></a>
+                <div class="caption">Chicken Shawarma Kabab</div>
+            </li>
+            <li data-type="thalappakattispecials" data-id="id-17" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/17.jpg" title="Chicken Karandi Omblet" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/17_thumb.jpg"></a>
+                <div class="caption">Chicken Karandi Omlet</div>
+            </li>
+            <li data-type="thalappakattispecials" data-id="id-18" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/18.jpg" title="Thalappakatti Special Fish" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/18_thumb.jpg"></a>
+                <div class="caption">Thalappakatti Special Fish</div>
+            </li>
+            <li data-type="thalappakattispecials" data-id="id-20" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/21.jpg" title="Thalappakatti Mutton Paya" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/21_thumb.jpg"></a>
+                <div class="caption">Thalappakatti Mutton Paya</div>
+            </li>
+            <li data-type="thalappakattispecials" data-id="id-21" class="item">
+                <a href="http://thalappakatti.com/public/img/menu/20.jpg" title="Grilled Chicken/375" rel="prettyPhoto[portfolio]"><img src="http://thalappakatti.com/public/img/menu/20_thumb.jpg"></a>
+                <div class="caption">Grilled Chicken/375</div>
+            </li>
+
+        </ul>
+    </div>
 </div>
-
-
 
 <style>
     table#t01 {
